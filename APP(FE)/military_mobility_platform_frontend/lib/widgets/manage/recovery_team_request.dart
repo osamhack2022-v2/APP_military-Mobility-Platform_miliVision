@@ -268,6 +268,7 @@ class _RecoveryTeamRequestContentState extends State<RecoveryTeamRequestContent>
                               decoration: const InputDecoration(
                                 border: InputBorder.none,
                                 hintText: "12하8839",
+                                hintStyle: TextStyle(color: Color(0xFFD6D6D6)),
                               ),
                             )
                           ),
@@ -284,6 +285,7 @@ class _RecoveryTeamRequestContentState extends State<RecoveryTeamRequestContent>
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: "서울특별시 동작구 OOO",
+                                hintStyle: TextStyle(color: Color(0xFFD6D6D6)),
                               ),
                             )
                           ),
@@ -303,6 +305,7 @@ class _RecoveryTeamRequestContentState extends State<RecoveryTeamRequestContent>
                               decoration: const InputDecoration(
                                 border: InputBorder.none,
                                 hintText: "타이어 펑크로 인한 교체",
+                                hintStyle: TextStyle(color: Color(0xFFD6D6D6)),
                               ),
                             )
                           ),
@@ -322,6 +325,7 @@ class _RecoveryTeamRequestContentState extends State<RecoveryTeamRequestContent>
                               decoration: const InputDecoration(
                                 border: InputBorder.none,
                                 hintText: "기타 특이사항을 입력해주세요.",
+                                hintStyle: TextStyle(color: Color(0xFFD6D6D6)),
                               ),
                             )
                           ),

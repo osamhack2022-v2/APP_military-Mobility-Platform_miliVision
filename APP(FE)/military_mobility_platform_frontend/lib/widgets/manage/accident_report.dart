@@ -166,10 +166,12 @@ class _AccidentReportSetState extends State<AccidentReportSet> {
                   ]
                 ),
               ),
+              /*
               Padding(
                     padding: EdgeInsets.only(left: 12.0, bottom: 50.0, top: 5.0),
                     child: Text('오른쪽 아이콘을 클릭해서 현재 위치를 조회해주세요.', style: TextStyle(fontSize: 12.0)),
-              ), 
+              ),
+              */ 
               Padding(
                 padding: const EdgeInsets.all(10),
                 child: ElevatedButton(
@@ -249,6 +251,61 @@ class _AccidentReportSetImageState extends State<AccidentReportSetImage> {
                 padding: const EdgeInsets.all(10),
                 child: ElevatedButton(
                   onPressed: () async {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (BuildContext cntx) {
+                        return Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            ListTile(
+                              leading: Icon(Icons.camera),
+                              title: Text("카메라에서 사진 업로드하기"),
+                              onTap: () async {
+                                var picker = ImagePicker();
+                                var image = await picker.pickImage(source: ImageSource.camera);
+                                if (image != null) {
+                                  context.read<AccidentProvider>().accidentImageSet(io.File(image.path));
+                                }
+                              },
+                            ),
+                            ListTile(
+                              leading: Icon(Icons.image),
+                              title:  Text("갤러리에서 사진 업로드하기"),
+                              onTap: () async {
+                                var picker = ImagePicker();
+                                var image = await picker.pickImage(source: ImageSource.gallery);
+                                if (image != null) {
+                                  context.read<AccidentProvider>().accidentImageSet(io.File(image.path));
+                                }
+                              },
+                            ),
+                            Container(
+                              height: 50,
+                              color: Colors.white,
+                              child: ListTile(
+                                title: Center(
+                                  child: Text(
+                                    "Cancel",
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ),
+                                onTap: () {
+                                  Navigator.pop(context);
+                                },
+                              ),
+                            )
+                          ],
+                        );
+                      });
+                  },
+                  child: const Text('사진 업로드하기', style: TextStyle(fontSize: 18.0)),
+                ),
+              ),
+              /* 수정 전 ui
+              Padding(
+                padding: const EdgeInsets.all(10),
+                child: ElevatedButton(
+                  onPressed: () async {
                     var picker = ImagePicker();
                     var image = await picker.pickImage(source: ImageSource.camera);
                     if (image != null) {
@@ -270,7 +327,7 @@ class _AccidentReportSetImageState extends State<AccidentReportSetImage> {
                   }, 
                   child: const Text('갤러리에서 사진 업로드하기', style: TextStyle(fontSize: 18.0)),
                 ),
-              ),
+              ),*/
               const Padding(
                   padding: EdgeInsets.only(bottom: 20.0)
               ),

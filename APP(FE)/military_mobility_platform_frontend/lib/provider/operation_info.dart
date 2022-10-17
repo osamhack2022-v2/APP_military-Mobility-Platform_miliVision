@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:military_mobility_platform_frontend/model/mobility.dart';
 import 'package:military_mobility_platform_frontend/model/reservation.dart';
 import 'package:military_mobility_platform_frontend/model/operation.dart';
-
 import 'package:military_mobility_platform_frontend/service/api.dart';
 
 class OperationInfoProvider extends ChangeNotifier {
