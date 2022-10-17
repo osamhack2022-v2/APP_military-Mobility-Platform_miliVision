@@ -3,7 +3,7 @@ import 'package:military_mobility_platform_frontend/model/mobility.dart';
 import 'package:military_mobility_platform_frontend/provider/drive_info.dart';
 import 'package:military_mobility_platform_frontend/provider/reservation_list.dart';
 import 'package:military_mobility_platform_frontend/service/mobility_assets.dart';
-import 'package:military_mobility_platform_frontend/widgets/list/detailed_info/detailed_info_subtab.dart';
+import 'package:military_mobility_platform_frontend/widgets/list/detailed_info/mobility_manual.dart';
 import 'package:provider/provider.dart';
 
 class DetailedInfoTab extends StatelessWidget {
@@ -25,7 +25,7 @@ class DetailedInfoTab extends StatelessWidget {
       Padding(
           padding: const EdgeInsets.all(36.0),
           child: _buildInfoSection(context, reservation.mobility)),
-      DetailedInfoSubTab(reservation)
+      Expanded(child: MobilityManual(reservation.mobility)),
     ]);
   }
 

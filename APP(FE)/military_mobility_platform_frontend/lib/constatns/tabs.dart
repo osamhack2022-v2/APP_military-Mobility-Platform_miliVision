@@ -12,13 +12,13 @@ import 'package:military_mobility_platform_frontend/widgets/request/request.dart
 import 'package:military_mobility_platform_frontend/widgets/request/select_mobility/select_mobility.dart';
 import 'package:provider/provider.dart';
 
-const kDefaultAppBarLeading =
-    IconButton(onPressed: null, icon: Icon(Icons.menu));
+const kDefaultAppBarLeading = null;
+// IconButton(onPressed: null, icon: Icon(Icons.menu));
 
 const kDefaultAppBarActions = [
-  IconButton(onPressed: null, icon: Icon(Icons.notifications)),
-  IconButton(onPressed: null, icon: Icon(Icons.share)),
-  IconButton(onPressed: null, icon: Icon(Icons.search)),
+  // IconButton(onPressed: null, icon: Icon(Icons.notifications)),
+  // IconButton(onPressed: null, icon: Icon(Icons.share)),
+  // IconButton(onPressed: null, icon: Icon(Icons.search)),
 ];
 
 final kTabs = [
