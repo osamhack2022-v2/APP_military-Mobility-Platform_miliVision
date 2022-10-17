@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:military_mobility_platform_frontend/model/mobility.dart';
+import 'package:military_mobility_platform_frontend/model/reservation.dart';
+import 'package:military_mobility_platform_frontend/provider/auth.dart';
 import 'package:military_mobility_platform_frontend/provider/operation_info.dart';
 import 'package:provider/provider.dart';
 import 'package:military_mobility_platform_frontend/service/toast.dart';
+import 'package:military_mobility_platform_frontend/service/snackbar.dart';
 
 class OperationPlan extends StatelessWidget {
   const OperationPlan({super.key});
@@ -40,6 +44,7 @@ class OperationPlan extends StatelessWidget {
           ),
           onTap: () {
             Navigator.push(
+            //context, MaterialPageRoute(builder: (childContext) => OperationPlanSet(reservation: reservation, context: context))
               context, MaterialPageRoute(builder: (childContext) => OperationPlanSet(context: context))
             );
           },
@@ -49,8 +54,10 @@ class OperationPlan extends StatelessWidget {
 }
 
 class OperationPlanSet extends StatefulWidget {
+  //const OperationPlanSet(this.reservation, {super.key, required this.context});
   const OperationPlanSet({super.key, required this.context});
   final BuildContext context;
+  //final ReservationDTO reservation;
 
   @override
   State<OperationPlanSet> createState() => _OperationPlanSetState();
@@ -245,8 +252,7 @@ class _OperationPlanSetState extends State<OperationPlanSet> {
                       Toast.showFailToast('모든 항목을 작성해주십이오.');
 
                     if(check == 0) {
-                      Toast.showSuccessToast('운전 계획이 작성되었습니다.');
-                      Navigator.of(context).pop();
+                      _makeOperationPlan(context);
                     }
                   },
                   child: const Text('운행 계획 작성하기', style: TextStyle(fontSize: 18.0)),
@@ -257,5 +263,20 @@ class _OperationPlanSetState extends State<OperationPlanSet> {
         );
       }
     );
+  }
+
+  void _makeOperationPlan(BuildContext context) {
+    try {
+      final authProvider = Provider.of<AuthProvider>(context, listen: false);
+      final operationInfoProvider =
+          Provider.of<OperationInfoProvider>(context, listen: false);
+      operationInfoProvider.operationPlanSet();
+      //operationInfoProvider.makeOperationPlan(authProvider.authenticatedClient!, reservation);
+          Navigator.of(context).pop();
+      Snackbar(context).showSuccess('운행 계획이 작성되었습니다.');
+    } catch (exception) {
+      print(exception);
+      Toast.showFailToast('운행 계획 작성에 실패했습니다.');
+    }
   }
 }

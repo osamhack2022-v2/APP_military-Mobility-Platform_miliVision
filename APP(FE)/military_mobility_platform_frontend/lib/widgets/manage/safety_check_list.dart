@@ -1,12 +1,13 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:military_mobility_platform_frontend/model/mobility.dart';
-import 'package:military_mobility_platform_frontend/model/operation.dart';
+import 'package:military_mobility_platform_frontend/model/reservation.dart';
 import 'package:military_mobility_platform_frontend/provider/auth.dart';
 import 'package:military_mobility_platform_frontend/provider/operation_info.dart';
 import 'package:provider/provider.dart';
 import 'package:military_mobility_platform_frontend/widgets/manage/manage.dart';
 import 'package:military_mobility_platform_frontend/service/toast.dart';
+import 'package:military_mobility_platform_frontend/service/snackbar.dart';
 
 class SafetyCheckList extends StatelessWidget {
   const SafetyCheckList({super.key});
@@ -44,6 +45,7 @@ class SafetyCheckList extends StatelessWidget {
           ),
         onTap: () {
           Navigator.push(
+            //context, MaterialPageRoute(builder: (childContext) => SafetyCheckListSet(reservation: reservation, context: context))
             context, MaterialPageRoute(builder: (childContext) => SafetyCheckListSet(context: context))
           );
         },
@@ -92,8 +94,11 @@ class LabeledCheckbox extends StatelessWidget {
 }
 
 class SafetyCheckListSet extends StatefulWidget {
+  //const SafetyCheckListSet(this.reservation, {super.key, required this.context});
+
   const SafetyCheckListSet({super.key, required this.context});
   final BuildContext context;
+  //final ReservationDTO reservation;
 
   @override
   State<SafetyCheckListSet> createState() => _SafetyCheckListSetState();
@@ -209,12 +214,8 @@ class _SafetyCheckListSetState extends State<SafetyCheckListSet> {
                         break;
                       }
                     }
-                    if(check == 0) {
-                      //context.read<OperationInfoProvider>().safetyCheckTrue;
-                      //Toast.showSuccessToast('안전 점검표가 제출되었습니다.');
-                      //Navigator.of(context).pop();
-                      
-                      //_confirmSafetyCheck(context); //이거만 넣기
+                    if(check == 0) {                      
+                      _confirmSafetyCheck(context);
                     }
                   }, 
                   child: const Text('안전 점검표 제출하기', style: TextStyle(fontSize: 18.0)),
@@ -227,26 +228,19 @@ class _SafetyCheckListSetState extends State<SafetyCheckListSet> {
     );
   }
   
-  /*
+  
   void _confirmSafetyCheck(BuildContext context) {
     try {
       final authProvider = Provider.of<AuthProvider>(context, listen: false);
       final operationInfoProvider =
           Provider.of<OperationInfoProvider>(context, listen: false);
-      operationInfoProvider.safetyCheckTrue;
-      operationInfoProvider.confirmSafetyCheck(
-          authProvider.authenticatedClient!, reservation);
+      operationInfoProvider.safetyCheckTrue();
+      //operationInfoProvider.confirmSafetyCheck(authProvider.authenticatedClient!, reservation);
           Navigator.of(context).pop();
-      //Provider.of<NavigationProvider>(context, listen: false).animateToTabWithName('list'); // 필요없을듯
       Snackbar(context).showSuccess('안전 점검표가 제출되었습니다.');
     } catch (exception) {
       print(exception);
-      Toast.showFailToast('안전 점검표 제출에 실패하였습니다.');
+      Toast.showFailToast('안전 점검표 제출에 실패했습니다.');
     }
   }
-  */
-  
-  
-  
-  
 }

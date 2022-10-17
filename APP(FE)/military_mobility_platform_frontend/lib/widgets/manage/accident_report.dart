@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'dart:io' as io;
+import 'package:military_mobility_platform_frontend/model/mobility.dart';
+import 'package:military_mobility_platform_frontend/provider/auth.dart';
 import 'package:military_mobility_platform_frontend/provider/accident.dart';
 import 'package:provider/provider.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:military_mobility_platform_frontend/service/toast.dart';
+import 'package:military_mobility_platform_frontend/service/snackbar.dart';
 
 class AccidentReport extends StatelessWidget {
   const AccidentReport({super.key});
@@ -40,6 +44,7 @@ class AccidentReport extends StatelessWidget {
         ),
         onTap: () {
           Navigator.push(
+            //context, MaterialPageRoute(builder: (childContext) => AccidentReportSet(mobility: mobility, context: context))
             context, MaterialPageRoute(builder: (childContext) => AccidentReportSet(context: context))
           );
         },
@@ -49,8 +54,11 @@ class AccidentReport extends StatelessWidget {
 }
 
 class AccidentReportSet extends StatefulWidget {
+  //const AccidentReportSet(this.mobility, {super.key, required this.context});
+
   const AccidentReportSet({super.key, required this.context});
   final BuildContext context;
+  //final MobilityDTO mobility;
 
   @override
   State<AccidentReportSet> createState() => _AccidentReportSetState();
@@ -65,6 +73,7 @@ class _AccidentReportSetState extends State<AccidentReportSet> {
     '차 대 자전거',
     '고속도로',
   ];
+  String accidentLocationState = "";
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +98,7 @@ class _AccidentReportSetState extends State<AccidentReportSet> {
                 child: Text('사고접수', style: TextStyle(fontSize: 22.5, fontWeight: FontWeight.bold)),
               ),
               const Padding(
-                  padding: EdgeInsets.only(bottom: 10.0)
+                padding: EdgeInsets.only(bottom: 10.0)
               ),
               const Padding(
                 padding: EdgeInsets.only(left: 10.0, bottom: 20.0),
@@ -144,7 +153,12 @@ class _AccidentReportSetState extends State<AccidentReportSet> {
                                     borderSide: BorderSide(color: Colors.black),
                                   ),
                                 ),
-                              onChanged: (val) => context.read<AccidentProvider>().accidentLocationSet(val)
+                              onChanged: (val) {
+                                context.read<AccidentProvider>().accidentLocationSet(val);
+                                setState(() {
+                                  accidentLocationState = val;
+                                });
+                              }
                             ),
                         ),
                       ]
@@ -161,7 +175,8 @@ class _AccidentReportSetState extends State<AccidentReportSet> {
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
-                      context, MaterialPageRoute(builder: (childContext) => AccidentReportSetImage(context: context))
+                     //context, MaterialPageRoute(builder: (childContext) => AccidentReportSetImage(mobility: widget.mobility, context: context, accidentTypeState: dropdownvalue, accidentLocationState: accidentLocationState))
+                      context, MaterialPageRoute(builder: (childContext) => AccidentReportSetImage(context: context, accidentTypeState: dropdownvalue, accidentLocationState: accidentLocationState))
                     );
                   }, 
                   child: const Text('다음', style: TextStyle(fontSize: 18.0)),
@@ -176,15 +191,19 @@ class _AccidentReportSetState extends State<AccidentReportSet> {
 }
 
 class AccidentReportSetImage extends StatefulWidget {
-  const AccidentReportSetImage({super.key, required this.context});
+  //const AccidentReportSetImage(this.mobility, {super.key, required this.context, required this.accidentTypeState, required this.accidentLocationState, });
+  const AccidentReportSetImage({super.key, required this.context, required this.accidentTypeState, required this.accidentLocationState, });
   final BuildContext context;
+  //final MobilityDTO mobility;
+  final accidentTypeState;
+  final accidentLocationState;
 
   @override
   State<AccidentReportSetImage> createState() => _AccidentReportSetImageState();
 }
 
 class _AccidentReportSetImageState extends State<AccidentReportSetImage> {
-  
+
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<AccidentProvider>(
@@ -207,7 +226,9 @@ class _AccidentReportSetImageState extends State<AccidentReportSetImage> {
                 padding: EdgeInsets.only(left: 10.0, bottom: 25.0),
                 child: Text('사고현장 사진 업로드', style: TextStyle(fontSize: 22.5, fontWeight: FontWeight.bold)),
               ),
-              /*
+
+              //웹에서 작동 시 주석처리하는 이미지 불러오는 부분
+              /* 
               Padding(
                 padding: EdgeInsets.only(left: 10.0),
                 child: Container( 
@@ -220,6 +241,7 @@ class _AccidentReportSetImageState extends State<AccidentReportSetImage> {
                 ),
               ),
               */
+
               const Padding(
                   padding: EdgeInsets.only(bottom: 20.0)
               ),
@@ -256,10 +278,7 @@ class _AccidentReportSetImageState extends State<AccidentReportSetImage> {
                 padding: const EdgeInsets.all(10),
                 child: ElevatedButton(
                   onPressed: () {
-                    int count = 0;
-                  Navigator.popUntil(context, (route) {
-                      return count++ == 2;
-                  });
+                    _postAccidentReport(context);
                   }, 
                   child: const Text('접수하기', style: TextStyle(fontSize: 18.0)),
                 ),
@@ -269,5 +288,24 @@ class _AccidentReportSetImageState extends State<AccidentReportSetImage> {
         );    
       }
     );
+  }
+
+  void _postAccidentReport(BuildContext context) {
+    try {
+      final authProvider = Provider.of<AuthProvider>(context, listen: false);
+      final accidentProvider =
+          Provider.of<AccidentProvider>(context, listen: false);
+      accidentProvider.accidentTypeSet(widget.accidentTypeState);
+      accidentProvider.accidentLocationSet(widget.accidentLocationState);
+      //accidentProvider.postAccidentReport(authProvider.authenticatedClient!, mobility);
+      int count = 0;
+      Navigator.popUntil(context, (route) {
+        return count++ == 2;
+      });
+      Snackbar(context).showSuccess('사고 접수가 완료되었습니다.');
+    } catch (exception) {
+      print(exception);
+      Toast.showFailToast('사고 접수에 실패했습니다.');
+    }
   }
 }

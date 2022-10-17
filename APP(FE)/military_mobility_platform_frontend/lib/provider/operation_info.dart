@@ -51,6 +51,10 @@ class OperationInfoProvider extends ChangeNotifier {
 
   void operationNoteSet(String operationNote) {
     _operationNote = operationNote;
+    notifyListeners();
+  }
+
+  void operationPlanSet() {
     _operationPlan = _operationNote + " " + _operationPurpose;
     notifyListeners();
   }
