@@ -1,6 +1,7 @@
 from channels.generic.websocket import WebsocketConsumer,AsyncWebsocketConsumer
 from channels.db import database_sync_to_async
 from channels.layers import get_channel_layer
+from channels.exceptions import StopConsumer
 from asgiref.sync import async_to_sync,sync_to_async
 from .models import Notification, Reservation
 from login.models import User
@@ -46,6 +47,7 @@ class NotificationConsumer(WebsocketConsumer):
             self.group_name,
             self.channel_name
         )
+        raise StopConsumer()
     
     def receive(self, text_data):
         text_data_json = json.loads(text_data)
