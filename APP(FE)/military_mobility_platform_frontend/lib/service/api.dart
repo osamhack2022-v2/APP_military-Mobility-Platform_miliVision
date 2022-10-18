@@ -36,7 +36,7 @@ abstract class APIService {
   Future<void> deleteReservation(@Query('reservation_id') int reservationID);
   
   @POST('/tms/safety_checklist')
-  Future<SafetyCheckDTO> confirmSafetyCheck(
+  Future<void> confirmSafetyCheck(
       @Body() SafetyCheckDTO dto);
   
   @POST('/tms/add_operation_plan')

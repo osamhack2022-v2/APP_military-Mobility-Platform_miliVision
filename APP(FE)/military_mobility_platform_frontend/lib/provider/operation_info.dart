@@ -58,13 +58,11 @@ class OperationInfoProvider extends ChangeNotifier {
     notifyListeners();
   }
   
-  Future<SafetyCheckDTO> confirmSafetyCheck(Dio authClient, ReservationDTO reservation) async {
+  Future<void> confirmSafetyCheck(Dio authClient, ReservationDTO reservation) async {
     try {
       final dto = SafetyCheckDTO(
           reservation_id: reservation.id,
           safety_checklist: _safetyCheckBool);
-      
-      return APIService(authClient).confirmSafetyCheck(dto);
     } catch (exception) {
       return Future.error(exception.toString());
     }

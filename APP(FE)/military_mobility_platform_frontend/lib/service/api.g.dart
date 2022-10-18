@@ -165,27 +165,25 @@ class _APIService implements APIService {
   }
 
   @override
-  Future<SafetyCheckDTO> confirmSafetyCheck(dto) async {
+  Future<void> confirmSafetyCheck(dto) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(dto.toJson());
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<SafetyCheckDTO>(Options(
+    await _dio.fetch<void>(_setStreamType<void>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
     )
-            .compose(
-              _dio.options,
-              '/tms/safety_checklist',
-              queryParameters: queryParameters,
-              data: _data,
-            )
-            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
-    final value = SafetyCheckDTO.fromJson(_result.data!);
-    return value;
+        .compose(
+          _dio.options,
+          '/tms/safety_checklist',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    return null;
   }
 
   @override
