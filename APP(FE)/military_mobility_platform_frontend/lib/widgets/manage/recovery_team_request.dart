@@ -267,6 +267,7 @@ class _RecoveryTeamRequestContentState extends State<RecoveryTeamRequestContent>
                             child: TextField(
                               decoration: const InputDecoration(
                                 border: InputBorder.none,
+                                //Mobility.id 넣기
                                 hintText: "12하8839",
                                 hintStyle: TextStyle(color: Color(0xFFD6D6D6)),
                               ),
