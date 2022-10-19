@@ -40,11 +40,11 @@ abstract class APIService {
       @Body() SafetyCheckDTO dto);
   
   @POST('/tms/add_operation_plan')
-  Future<OperationPlanDTO> makeOperationPlan(
+  Future<void> makeOperationPlan(
       @Body() OperationPlanDTO dto);
   
   @GET('/tms/finishing_using')
-  Future<OperationFinishDTO> returnVehicle(
+  Future<void> returnVehicle(
       @Body() OperationFinishDTO dto);
 
   @GET('/incident/incident')
