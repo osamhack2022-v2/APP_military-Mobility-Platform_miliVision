@@ -1,12 +1,19 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:military_mobility_platform_frontend/model/mobility.dart';
+import 'package:military_mobility_platform_frontend/model/reservation.dart';
+import 'package:military_mobility_platform_frontend/model/operation.dart';
+import 'package:military_mobility_platform_frontend/service/api.dart';
 
 class OperationInfoProvider extends ChangeNotifier {
   String _safetyCheck = "False";
+  bool _safetyCheckBool = false;
   String _driverInfo = "";
   String _commanderInfo = "";
   String _operationPurpose = "";
   String _operationNote = "";
   String _vehicleReturn = "False";
+  String _operationPlan = "";
 
   String get safetyCheck => _safetyCheck;
   String get driverInfo => _driverInfo;
@@ -17,6 +24,7 @@ class OperationInfoProvider extends ChangeNotifier {
 
   void safetyCheckTrue() {
     _safetyCheck = "True";
+    _safetyCheckBool = true;
     notifyListeners();
   }
 
@@ -43,5 +51,39 @@ class OperationInfoProvider extends ChangeNotifier {
   void operationNoteSet(String operationNote) {
     _operationNote = operationNote;
     notifyListeners();
+  }
+
+  void operationPlanSet() {
+    _operationPlan = _operationNote + " " + _operationPurpose;
+    notifyListeners();
+  }
+  
+  Future<void> confirmSafetyCheck(Dio authClient, ReservationDTO reservation) async {
+    try {
+      final dto = SafetyCheckDTO(
+          reservation_id: reservation.id,
+          safety_checklist: _safetyCheckBool);
+    } catch (exception) {
+      return Future.error(exception.toString());
+    }
+  }
+    
+  Future<void> makeOperationPlan(Dio authClient, ReservationDTO reservation) async {
+    try {
+      final dto = OperationPlanDTO(
+          reservation_id: reservation.id,
+          operation_plan: _operationPlan);
+    } catch (exception) {
+      return Future.error(exception.toString());
+    }
+  }
+    
+  Future<void> returnVehicle(Dio authClient, ReservationDTO reservation) async {
+    try {
+      final dto = OperationFinishDTO(
+          reservation_id: reservation.id); 
+    } catch (exception) {
+      return Future.error(exception.toString());
+    }
   }
 }

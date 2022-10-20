@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
+import 'package:military_mobility_platform_frontend/model/mobility.dart';
+import 'package:military_mobility_platform_frontend/provider/auth.dart';
+import 'package:military_mobility_platform_frontend/provider/accident.dart';
+import 'package:provider/provider.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:map_pin_picker/map_pin_picker.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:military_mobility_platform_frontend/provider/accident.dart';
-import 'package:provider/provider.dart';
+import 'package:military_mobility_platform_frontend/service/toast.dart';
+import 'package:military_mobility_platform_frontend/service/snackbar.dart';
+
 
 class RecoveryTeamRequest extends StatelessWidget {
   const RecoveryTeamRequest({super.key});
@@ -44,6 +49,7 @@ class RecoveryTeamRequest extends StatelessWidget {
         ),
         onTap: () {
           Navigator.push(
+            //context, MaterialPageRoute(builder: (childContext) => VehicleLocationCheck(mobility: mobility, context: context))
             context, MaterialPageRoute(builder: (childContext) => VehicleLocationCheck(context: context))
           );
         },
@@ -52,17 +58,12 @@ class RecoveryTeamRequest extends StatelessWidget {
   }
 }
 
-/*
-Future<Position> getCurrentLocation() async {
-  Position position = await Geolocator.getCurrentPosition(
-      desiredAccuracy: LocationAccuracy.high);
-  return position;
-}
-*/
-
 class VehicleLocationCheck extends StatefulWidget {
+  //const VehicleLocationCheck(this.mobility, {super.key, required this.context});
+
   const VehicleLocationCheck({super.key, required this.context});
   final BuildContext context;
+  //final MobilityDTO mobility;
 
   @override
   State<VehicleLocationCheck> createState() => _VehicleLocationCheckState();
@@ -71,8 +72,9 @@ class VehicleLocationCheck extends StatefulWidget {
 class _VehicleLocationCheckState extends State<VehicleLocationCheck> {
   final _controller = Completer<GoogleMapController>();
   MapPickerController mapPickerController = MapPickerController(); 
-  //var gps = await getCurrentLocation(); //gps.latitude gps.longitude
+  //현재 위치 가져오는 함수 var gps = await getCurrentLocation(); //gps.latitude gps.longitude
 
+  //첫 화면 시작 위치 설정
   CameraPosition cameraPosition = CameraPosition(
     target: LatLng(37.531918, 127.018598),
     zoom: 14.4746,
@@ -176,7 +178,8 @@ class _VehicleLocationCheckState extends State<VehicleLocationCheck> {
                           "Location latitude : ${cameraPosition.target.latitude} , longitude : ${cameraPosition.target.longitude}");
                       print("Address: ${textController.text}");
                       Navigator.push(
-                        context, MaterialPageRoute(builder: (childContext) => RecoveryTeamRequestContent(context: context))
+                        //context, MaterialPageRoute(builder: (childContext) => RecoveryTeamRequestContent(mobility: widget.mobility, context: context, latitude: cameraPosition.target.latitude, longitude: cameraPosition.target.longitude))
+                        context, MaterialPageRoute(builder: (childContext) => RecoveryTeamRequestContent(context: context, latitude: cameraPosition.target.latitude, longitude: cameraPosition.target.longitude))
                       );
                     },
                     style: ButtonStyle(
@@ -201,8 +204,12 @@ class _VehicleLocationCheckState extends State<VehicleLocationCheck> {
 
 
 class RecoveryTeamRequestContent extends StatefulWidget {
-  const RecoveryTeamRequestContent({super.key, required this.context});
+  //const RecoveryTeamRequestContent(this.mobility, {super.key, required this.context, required this.latitude, required this.longitude});
+  const RecoveryTeamRequestContent({super.key, required this.context, required this.latitude, required this.longitude});
   final BuildContext context;
+  //final MobilityDTO mobility;
+  final latitude;
+  final longitude;
 
   @override
   State<RecoveryTeamRequestContent> createState() => _RecoveryTeamRequestContentState();
@@ -260,7 +267,9 @@ class _RecoveryTeamRequestContentState extends State<RecoveryTeamRequestContent>
                             child: TextField(
                               decoration: const InputDecoration(
                                 border: InputBorder.none,
+                                //Mobility.id 넣기
                                 hintText: "12하8839",
+                                hintStyle: TextStyle(color: Color(0xFFD6D6D6)),
                               ),
                             )
                           ),
@@ -277,6 +286,7 @@ class _RecoveryTeamRequestContentState extends State<RecoveryTeamRequestContent>
                               decoration: InputDecoration(
                                 border: InputBorder.none,
                                 hintText: "서울특별시 동작구 OOO",
+                                hintStyle: TextStyle(color: Color(0xFFD6D6D6)),
                               ),
                             )
                           ),
@@ -296,6 +306,7 @@ class _RecoveryTeamRequestContentState extends State<RecoveryTeamRequestContent>
                               decoration: const InputDecoration(
                                 border: InputBorder.none,
                                 hintText: "타이어 펑크로 인한 교체",
+                                hintStyle: TextStyle(color: Color(0xFFD6D6D6)),
                               ),
                             )
                           ),
@@ -315,6 +326,7 @@ class _RecoveryTeamRequestContentState extends State<RecoveryTeamRequestContent>
                               decoration: const InputDecoration(
                                 border: InputBorder.none,
                                 hintText: "기타 특이사항을 입력해주세요.",
+                                hintStyle: TextStyle(color: Color(0xFFD6D6D6)),
                               ),
                             )
                           ),
@@ -328,10 +340,7 @@ class _RecoveryTeamRequestContentState extends State<RecoveryTeamRequestContent>
                 padding: const EdgeInsets.all(10),
                 child: ElevatedButton(
                   onPressed: () { 
-                    int count = 0;
-                    Navigator.popUntil(context, (route) {
-                        return count++ == 2;
-                    });
+                    _postRecoveryTeam(context);
                   },
                   child: const Text('확인', style: TextStyle(fontSize: 18.0)),
                 ),
@@ -341,5 +350,23 @@ class _RecoveryTeamRequestContentState extends State<RecoveryTeamRequestContent>
         );
       }
     );
+  }
+
+  void _postRecoveryTeam(BuildContext context) {
+    try {
+      final authProvider = Provider.of<AuthProvider>(context, listen: false);
+      final accidentProvider =
+          Provider.of<AccidentProvider>(context, listen: false);
+      accidentProvider.recoveryTeamRequestLocationSet("Location latitude : ${widget.latitude} , longitude : ${widget.longitude}");
+      //accidentProvider.postRecoveryTeam(authProvider.authenticatedClient!, mobility);
+      int count = 0;
+      Navigator.popUntil(context, (route) {
+        return count++ == 2;
+      });
+      Snackbar(context).showSuccess('구난 차량 요청이 완료되었습니다.');
+    } catch (exception) {
+      print(exception);
+      Toast.showFailToast('구난 차량 요청에 실패했습니다.');
+    }
   }
 }

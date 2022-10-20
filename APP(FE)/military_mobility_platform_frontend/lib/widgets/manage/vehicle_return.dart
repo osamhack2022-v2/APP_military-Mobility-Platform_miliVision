@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:military_mobility_platform_frontend/service/toast.dart';
+import 'package:military_mobility_platform_frontend/model/reservation.dart';
+import 'package:military_mobility_platform_frontend/provider/auth.dart';
 import 'package:military_mobility_platform_frontend/provider/operation_info.dart';
 import 'package:provider/provider.dart';
+import 'package:military_mobility_platform_frontend/service/toast.dart';
+import 'package:military_mobility_platform_frontend/service/snackbar.dart';
 
 class VehicleReturn extends StatelessWidget {
+  //const VehicleReturn(this.reservation, {super.key});
   const VehicleReturn({super.key});
+  //final ReservationDTO reservation;
 
   @override
   Widget build(BuildContext context) {
@@ -38,85 +43,23 @@ class VehicleReturn extends StatelessWidget {
           )
         ),
         onTap: () {
-          Toast.showSuccessToast('차량 반납 완료');
-          context.read<OperationInfoProvider>().vehicleReturnTrue();
-          //서버에 반납 완료 보내는 코드
-          /*
-          showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                content: Center(
-                  child: Container(
-                    width: 300.0,
-                    height: 200.0,
-                    child: Column(
-                      children: [
-                        Text('차량반납 요청이 완료되었습니다.', style: TextStyle(fontSize: 18.0)),
-                        Text('수송업무 담당자 확인 후 PUSH 알림으로 반납완료 처리 예정입니다.', style: TextStyle(fontSize: 15.0)),
-                      ],
-                    )
-                  )
-                ),
-                actions: [
-                  Center(
-                    child: TextButton(
-                      child: Text('닫기'),
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      }
-                    ),
-                  ),
-                ],
-              );
-            },
-          );*/
+          _returnVehicle(context);
         },
       )
     );
   }
-}
 
-class VehicleReturnSet extends StatefulWidget {
-  const VehicleReturnSet({super.key});
-
-  @override
-  State<VehicleReturnSet> createState() => _VehicleReturnSetState();
-}
-
-class _VehicleReturnSetState extends State<VehicleReturnSet> {
- 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          IconButton(
-            icon: Icon(Icons.arrow_back_ios),
-            color: Colors.black,
-            iconSize: 15.0,
-            onPressed: () {Navigator.of(context).pop();},
-          ),
-          const Padding(
-              padding: EdgeInsets.only(bottom: 10.0)
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 10.0),
-            child: Text('차량반납', style: TextStyle(fontSize: 22.5, fontWeight: FontWeight.bold)),
-          ),
-          const Padding(
-              padding: EdgeInsets.only(bottom: 10.0)
-          ),
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: ElevatedButton(
-              onPressed: () => Navigator.of(context).pop(), 
-              child: const Text('차량 반납하기', style: TextStyle(fontSize: 18.0)),
-            ),
-          ),
-        ],
-      )
-    );
+  void _returnVehicle(BuildContext context) {
+    try {
+      final authProvider = Provider.of<AuthProvider>(context, listen: false);
+      final operationInfoProvider =
+          Provider.of<OperationInfoProvider>(context, listen: false);
+      operationInfoProvider.vehicleReturnTrue();
+      //operationInfoProvider.returnVehicle(authProvider.authenticatedClient!, reservation);
+      Snackbar(context).showSuccess('차량 반납이 완료되었습니다.');
+    } catch (exception) {
+      print(exception);
+      Toast.showFailToast('차량 반납에 실패했습니다.');
+    }
   }
 }
