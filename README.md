@@ -163,7 +163,7 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 ### 1. 체계 구성도
 
 <div align="center">
-    <img src="images/system_architecture.PNG" alt="시스템 아키텍쳐" width="300" height="300">
+    <img src="images/system_architecture.PNG" alt="시스템 아키텍쳐">
 </div>
 
 ### 2. 필수 조건 안내
