@@ -20,7 +20,7 @@ class MobilityRequestProvider extends ChangeNotifier {
 
   String _departure = kLocations[0];
   String _destination = kLocations[0];
-  int _passengers = 0;
+  int _passengers = 1;
   late DateTime _departureTime;
   late DateTime _arrivalTime;
   List<MobilityDTO> _availableMobilities = [];
@@ -44,7 +44,7 @@ class MobilityRequestProvider extends ChangeNotifier {
   }
 
   void decreasePassengers() {
-    _passengers = max(0, _passengers - 1);
+    _passengers = max(1, _passengers - 1);
     notifyListeners();
   }
 

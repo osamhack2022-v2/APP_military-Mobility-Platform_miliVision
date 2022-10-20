@@ -40,6 +40,7 @@ MakeReservationReqDTO _$MakeReservationReqDTOFromJson(
       destination: json['destination'] as String,
       startTime: DateTime.parse(json['reservation_start'] as String),
       endTime: DateTime.parse(json['reservation_end'] as String),
+      drivingBySelf: json['driving_by_self'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$MakeReservationReqDTOToJson(
@@ -50,6 +51,7 @@ Map<String, dynamic> _$MakeReservationReqDTOToJson(
       'destination': instance.destination,
       'reservation_start': instance.startTime.toIso8601String(),
       'reservation_end': instance.endTime.toIso8601String(),
+      'driving_by_self': instance.drivingBySelf,
     };
 
 MakeReservationResDTO _$MakeReservationResDTOFromJson(

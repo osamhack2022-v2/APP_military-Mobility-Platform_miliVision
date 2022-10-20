@@ -48,7 +48,8 @@ class MakeReservationReqDTO {
       required this.departure,
       required this.destination,
       required this.startTime,
-      required this.endTime});
+      required this.endTime,
+      this.drivingBySelf = false});
 
   @JsonKey(name: 'car')
   final int carID;
@@ -58,6 +59,8 @@ class MakeReservationReqDTO {
   final DateTime startTime;
   @JsonKey(name: 'reservation_end')
   final DateTime endTime;
+  @JsonKey(name: 'driving_by_self')
+  final bool drivingBySelf;
 
   Map<String, dynamic> toJson() => _$MakeReservationReqDTOToJson(this);
 }

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NavBarItemVO {
-  const NavBarItemVO({required this.label, required this.icon});
+  const NavBarItemVO({required this.label});
   final String label;
-  final IconData icon;
 }
 
 class AppBarVO {

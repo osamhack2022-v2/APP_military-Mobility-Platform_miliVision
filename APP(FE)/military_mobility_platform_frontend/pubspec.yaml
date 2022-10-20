@@ -51,6 +51,7 @@ dependencies:
   flutter_svg: ^1.1.5
   google_maps_flutter: ^2.2.1
   google_maps_flutter_web: ^0.4.0+3
+  floating_action_bubble: ^1.1.4
   map_pin_picker: ^0.0.1
   geocoding: ^2.0.5
   geolocator: ^9.0.2

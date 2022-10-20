@@ -45,6 +45,8 @@ class NavigatedHomeState extends State<NavigatedHome> {
         type: BottomNavigationBarType.fixed,
         items: navigationProvider.navigationBarOptions,
         currentIndex: navigationProvider.currentNavBarItemIdx,
-        onTap: (index) => navigationProvider.animateToTabWithNavBarIdx(index));
+        onTap: (index) => navigationProvider.animateToTabWithNavBarIdx(index),
+        showSelectedLabels: false,
+        showUnselectedLabels: false);
   }
 }

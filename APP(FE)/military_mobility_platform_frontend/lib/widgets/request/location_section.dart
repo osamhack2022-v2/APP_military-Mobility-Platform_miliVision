@@ -69,7 +69,7 @@ class LocationSelectModalState extends State<LocationSelectModal> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: const EdgeInsets.symmetric(horizontal: 40.0),
+        padding: const EdgeInsets.symmetric(horizontal: 10.0),
         child: Column(children: [
           _buildSearchField(),
           Expanded(child: _buildListView()),
@@ -78,7 +78,7 @@ class LocationSelectModalState extends State<LocationSelectModal> {
 
   Widget _buildSearchField() {
     return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10),
+        padding: const EdgeInsets.symmetric(vertical: 17.0, horizontal: 20.0),
         child: SizedBox(
             height: 40.0,
             child: TextField(
@@ -98,31 +98,34 @@ class LocationSelectModalState extends State<LocationSelectModal> {
   Widget _buildListView() {
     final locations = _getFilteredLocations();
     return ListView.builder(
-      padding: const EdgeInsets.symmetric(horizontal: 7),
-      itemCount: (locations.length / 2).round(),
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+      itemCount: locations.length,
       itemBuilder: (context, index) {
-        final loc1 = index * 2 < locations.length ? locations[index * 2] : null;
-        final loc2 =
-            index * 2 + 1 < locations.length ? locations[index * 2 + 1] : null;
-        return Row(children: [
-          _buildListTile(loc1),
-          _buildListTile(loc2),
-        ]);
+        final loc = locations[index];
+        return _buildListTile(loc);
       },
     );
   }
 
   Widget _buildListTile(String? location) {
-    return Expanded(
+    final style =
+        GoogleFonts.roboto(fontSize: 15.0, fontWeight: FontWeight.bold);
+    return Card(
+        elevation: 1.5,
         child: ListTile(
-      title: Center(child: Text(location ?? "")),
-      onTap: location != null
-          ? () {
-              widget.setter(location);
-              Navigator.pop(context);
-            }
-          : null,
-    ));
+          dense: true,
+          visualDensity: VisualDensity.compact,
+          title: Padding(
+              padding:
+                  const EdgeInsets.symmetric(vertical: 7.0, horizontal: 13.0),
+              child: Text(location ?? "", style: style)),
+          onTap: location != null
+              ? () {
+                  widget.setter(location);
+                  Navigator.pop(context);
+                }
+              : null,
+        ));
   }
 
   List<String> _getFilteredLocations() {

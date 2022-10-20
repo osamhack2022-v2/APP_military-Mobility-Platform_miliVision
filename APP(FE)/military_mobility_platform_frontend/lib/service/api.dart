@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:military_mobility_platform_frontend/model/mileage.dart';
 import 'package:military_mobility_platform_frontend/model/mobility.dart';
 import 'package:military_mobility_platform_frontend/model/reservation.dart';
 import 'package:military_mobility_platform_frontend/model/user.dart';
@@ -34,6 +35,12 @@ abstract class APIService {
 
   @DELETE('/tms/reservation')
   Future<void> deleteReservation(@Query('reservation_id') int reservationID);
+
+  @POST('/mileage/history')
+  Future<HistoryDTO> makeHistory(@Body() MakeHistoryReqDTO dto);
+
+  @GET('/mileage/history')
+  Future<GetHistoriesResDTO> getHistories();
   
   @POST('/tms/safety_checklist')
   Future<void> confirmSafetyCheck(
@@ -60,5 +67,4 @@ abstract class APIService {
   @POST('/incident/rescue')
   Future<PostRecoveryTeamDTO> postRecoveryTeam(
       @Body() PostRecoveryTeamReqDTO dto);
-  
 }

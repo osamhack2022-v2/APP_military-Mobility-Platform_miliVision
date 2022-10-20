@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:military_mobility_platform_frontend/provider/drive_info.dart';
@@ -13,13 +11,13 @@ class DriveMap extends StatefulWidget {
 }
 
 class DriveMapState extends State<DriveMap> {
-  static const kZoom = 13.5;
+  static const kZoom = 17.0;
+  static const defaultLocation = LatLng(36.288496, 127.241703);
   LatLng? location;
-  final Completer<GoogleMapController> _controller = Completer();
 
   void loadCurrentLocation(
       DriveInfoProvider provider, GoogleMapController controller) {
-    provider.locationStream!.listen((currentLocation) {
+    provider.locationStream.listen((currentLocation) {
       location = currentLocation;
       controller.animateCamera(
         CameraUpdate.newCameraPosition(
@@ -37,8 +35,8 @@ class DriveMapState extends State<DriveMap> {
       mapToolbarEnabled: false,
       rotateGesturesEnabled: false,
       scrollGesturesEnabled: false,
-      initialCameraPosition: CameraPosition(
-          target: driveInfoProvider.currentLocation!, zoom: kZoom),
+      initialCameraPosition:
+          const CameraPosition(target: defaultLocation, zoom: kZoom),
       polylines: {
         Polyline(
           polylineId: const PolylineId("route"),
