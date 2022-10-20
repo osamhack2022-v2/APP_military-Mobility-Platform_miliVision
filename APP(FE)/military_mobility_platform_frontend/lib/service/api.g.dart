@@ -166,6 +166,54 @@ class _APIService implements APIService {
 
   @override
   Future<HistoryDTO> makeHistory(dto) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(dto.toJson());
+    final _result = await _dio
+        .fetch<Map<String, dynamic>>(_setStreamType<HistoryDTO>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/mileage/history',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = HistoryDTO.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<List<HistoryDTO>> getHistories() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio
+        .fetch<List<dynamic>>(_setStreamType<List<HistoryDTO>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/mileage/history',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    var value = _result.data!
+        .map((dynamic i) => HistoryDTO.fromJson(i as Map<String, dynamic>))
+        .toList();
+    return value;
+  }
+
+  @override
   Future<void> confirmSafetyCheck(dto) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
@@ -264,8 +312,6 @@ class _APIService implements APIService {
     final _data = <String, dynamic>{};
     _data.addAll(dto.toJson());
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<HistoryDTO>(Options(
-
         .fetch<Map<String, dynamic>>(_setStreamType<PostAccidentRepDTO>(Options(
       method: 'POST',
       headers: _headers,
@@ -273,16 +319,54 @@ class _APIService implements APIService {
     )
             .compose(
               _dio.options,
-              '/mileage/history',
               '/incident/incident',
               queryParameters: queryParameters,
               data: _data,
             )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = PostAccidentRepDTO.fromJson(_result.data!);
+    return value;
   }
 
   @override
-        .fetch<List<dynamic>>(_setStreamType<List<HistoryDTO>>(Options(
+  Future<List<RecoveryTeamDTO>> getRecoveryTeam() async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    final _result = await _dio
+        .fetch<List<dynamic>>(_setStreamType<List<RecoveryTeamDTO>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/incident/rescue',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    var value = _result.data!
+        .map((dynamic i) => RecoveryTeamDTO.fromJson(i as Map<String, dynamic>))
+        .toList();
+    return value;
+  }
+
+  @override
+  Future<PostRecoveryTeamDTO> postRecoveryTeam(dto) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(dto.toJson());
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<PostRecoveryTeamDTO>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
               _dio.options,
               '/incident/rescue',
               queryParameters: queryParameters,
