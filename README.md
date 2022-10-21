@@ -175,9 +175,11 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 
  ### 5. 수송업무 관리 기능
  #### 5-1. 관리자 페이지(django-admin)
+<br>
 <div align="center">
     <img src="images/example-3.gif" alt="관리자 페이지">
 </div>
+<br>
 o 기능명: 수송업무 관리자 페이지
 o 개요: 수송업무 담당자가 접속하여 사용자, 차량, 이력 등을 관리할 수 있는 페이지입니다. 차량들을 등록하고 관리할 수 있으며, 배차를 승인하고 반려할 수 있습니다.<br><br>
 o 엑터명: 수송업무 담당자<br><br>
@@ -191,9 +193,11 @@ o 기능 흐름:<br>
 <br>
 
  #### 5-2. 전체 이동현황 조회
+<br>
  <div align="center">
     <img src="images/example-4.gif" alt="관리자 페이지">
 </div>
+<br>
 o 기능명: 수송업무 관리자 페이지
 o 개요: 수송업무 담당자가 접속하여 사용자, 차량, 이력 등을 관리할 수 있는 페이지입니다. 차량들을 등록하고 관리할 수 있으며, 배차를 승인하고 반려할 수 있습니다.<br><br>
 o 엑터명: 수송업무 담당자<br><br>
