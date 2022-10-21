@@ -7,7 +7,9 @@ import 'package:military_mobility_platform_frontend/provider/navigation.dart';
 import 'package:military_mobility_platform_frontend/widgets/history_list/history_list.dart';
 import 'package:military_mobility_platform_frontend/widgets/list/detailed_info/detailed_info.dart';
 import 'package:military_mobility_platform_frontend/widgets/list/list.dart';
+import 'package:military_mobility_platform_frontend/widgets/manage/accident_report.dart';
 import 'package:military_mobility_platform_frontend/widgets/manage/manage.dart';
+import 'package:military_mobility_platform_frontend/widgets/manage/operation_plan.dart';
 import 'package:military_mobility_platform_frontend/widgets/manage/safety_check_list.dart';
 import 'package:military_mobility_platform_frontend/widgets/request/request.dart';
 import 'package:military_mobility_platform_frontend/widgets/request/select_mobility/select_mobility.dart';
@@ -71,6 +73,54 @@ final kTabs = [
     builder: () => const SafetyCheckListSet(),
     appbar: AppBarVO(
         title: '안전점검표',
+        leading: (context) => IconButton(
+            onPressed: () {
+              Provider.of<NavigationProvider>(context, listen: false)
+                  .animateToTabWithName('detailed info');
+            },
+            icon: const Icon(Icons.arrow_back_ios))),
+  ),
+  TabVO(
+    name: 'operation plan',
+    builder: () => const OperationPlanSet(),
+    appbar: AppBarVO(
+        title: '운행계획작성',
+        leading: (context) => IconButton(
+            onPressed: () {
+              Provider.of<NavigationProvider>(context, listen: false)
+                  .animateToTabWithName('detailed info');
+            },
+            icon: const Icon(Icons.arrow_back_ios))),
+  ),
+  TabVO(
+    name: 'accident report',
+    builder: () => const AccidentReportSet(),
+    appbar: AppBarVO(
+        title: '사고접수',
+        leading: (context) => IconButton(
+            onPressed: () {
+              Provider.of<NavigationProvider>(context, listen: false)
+                  .animateToTabWithName('detailed info');
+            },
+            icon: const Icon(Icons.arrow_back_ios))),
+  ),
+  TabVO(
+    name: 'set image',
+    builder: () => const AccidentReportSetImage(),
+    appbar: AppBarVO(
+        title: '사고현장사진업로드',
+        leading: (context) => IconButton(
+            onPressed: () {
+              Provider.of<NavigationProvider>(context, listen: false)
+                  .animateToTabWithName('detailed info');
+            },
+            icon: const Icon(Icons.arrow_back_ios))),
+  ),
+  TabVO(
+    name: 'operation plan',
+    builder: () => const OperationPlanSet(),
+    appbar: AppBarVO(
+        title: '운행계획작성',
         leading: (context) => IconButton(
             onPressed: () {
               Provider.of<NavigationProvider>(context, listen: false)

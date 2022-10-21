@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:military_mobility_platform_frontend/model/accident.dart';
@@ -5,13 +7,14 @@ import 'package:military_mobility_platform_frontend/model/recovery_team.dart';
 import 'package:military_mobility_platform_frontend/model/reservation.dart';
 import 'package:military_mobility_platform_frontend/model/mobility.dart';
 import 'package:military_mobility_platform_frontend/service/api.dart';
+import 'dart:io' as io;
 
 class AccidentProvider extends ChangeNotifier {
   List<AccidentDTO> _accidentReports = [];
   int? _selectedIdxACC;
   String _accidentType = "";
   String _accidentLocation = "";
-  var _accidentImage = null;
+  io.File? _accidentImage;
 
   List<RecoveryTeamDTO> _recoveryTeamReports = [];
   int? _selectedIdxREC;
@@ -47,8 +50,8 @@ class AccidentProvider extends ChangeNotifier {
     _accidentLocation = accidentLocation;
     notifyListeners();
   }
- 
-  void accidentImageSet(var accidentImage) {
+
+  void accidentImageSet(io.File accidentImage) {
     _accidentImage = accidentImage;
     notifyListeners();
   }
@@ -67,21 +70,17 @@ class AccidentProvider extends ChangeNotifier {
     _recoveryTeamRequestNote = recoveryTeamRequestNote;
     notifyListeners();
   }
-  
-  Future<PostAccidentRepDTO> postAccidentReport(Dio authClient, MobilityDTO mobility) async {
+
+  Future<PostAccidentRepDTO> postAccidentReport(
+      Dio authClient, MobilityDTO mobility) async {
     try {
-      final dto = PostAccidentRepReqDTO(
-          car: mobility.id,
-          incident_type: _accidentType,
-          location: _accidentLocation,
-          image: _accidentImage);
-      
-      return APIService(authClient).postAccidentReport(dto);
+      return APIService(authClient).postAccidentReport(
+          mobility.id, _accidentType, _accidentLocation, _accidentImage!);
     } catch (exception) {
       return Future.error(exception.toString());
     }
   }
-    
+
   Future<bool> getAccidentReport(Dio authClient) async {
     try {
       final rep = await APIService(authClient).getAccidentReport();
@@ -92,21 +91,22 @@ class AccidentProvider extends ChangeNotifier {
       return Future.error(exception.toString());
     }
   }
-    
-  Future<PostRecoveryTeamDTO> postRecoveryTeam(Dio authClient, MobilityDTO mobility) async {
+
+  Future<PostRecoveryTeamDTO> postRecoveryTeam(
+      Dio authClient, MobilityDTO mobility) async {
     try {
       final dto = PostRecoveryTeamReqDTO(
           car: mobility.id,
           location: _recoveryTeamRequestLocation,
           service_needs: _recoveryTeamRequestService,
           note: _recoveryTeamRequestNote);
-      
+
       return APIService(authClient).postRecoveryTeam(dto);
     } catch (exception) {
       return Future.error(exception.toString());
     }
   }
-    
+
   Future<bool> getRecoveryTeam(Dio authClient) async {
     try {
       final rep = await APIService(authClient).getRecoveryTeam();
@@ -117,5 +117,4 @@ class AccidentProvider extends ChangeNotifier {
       return Future.error(exception.toString());
     }
   }
-    
 }

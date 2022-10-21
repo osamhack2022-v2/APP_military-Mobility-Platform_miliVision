@@ -74,6 +74,7 @@ class OperationInfoProvider extends ChangeNotifier {
     try {
       final dto = OperationPlanDTO(
           reservation_id: reservation.id, operation_plan: _operationPlan);
+      APIService(authClient).makeOperationPlan(dto);
     } catch (exception) {
       return Future.error(exception.toString());
     }

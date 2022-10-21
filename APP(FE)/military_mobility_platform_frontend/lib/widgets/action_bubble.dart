@@ -124,13 +124,13 @@ class ActionBubbleState extends State<ActionBubble>
   }
 
   void _operationPlan(BuildContext context) {
-    print('운행계획표');
     _animationController.reverse();
+    navProvider.animateToTabWithName('operation plan');
   }
 
   void _accidentReport(BuildContext context) {
-    print('사고접수');
     _animationController.reverse();
+    navProvider.animateToTabWithName('accident report');
   }
 
   void _recoveryRequest(BuildContext context) {
