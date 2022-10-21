@@ -54,47 +54,45 @@ class _EmergencyEvacuationRequestSetState
     extends State<EmergencyEvacuationRequestSet> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Scaffold(
-            body: Column(
-      children: [
-        const Padding(padding: EdgeInsets.only(bottom: 100.0)),
-        Image.asset(
-          'assets/images/MEDCOM.jpg',
-          width: 100.0,
-          height: 120.0,
-          fit: BoxFit.cover,
-        ),
-        const Padding(padding: EdgeInsets.only(bottom: 10.0)),
-        const Padding(
-            padding: EdgeInsets.only(bottom: 30.0),
-            child: Text('Emergency Center', style: TextStyle(fontSize: 30.0))),
-        const Padding(
-            padding: EdgeInsets.only(bottom: 30.0),
-            child: Text('본 서비스를 이용하기 위해서는 사용자 코드를 입력하셔야 합니다.',
-                style: TextStyle(fontSize: 13.0))),
-        SizedBox(
-          width: 300,
-          child: TextField(
-            decoration: const InputDecoration(
-              hintText: "사용자 코드 입력",
+    return Container(
+        padding: const EdgeInsets.symmetric(vertical: 40.0, horizontal: 50.0),
+        child: Column(
+          children: [
+            const Padding(padding: EdgeInsets.only(bottom: 100.0)),
+            Image.asset(
+              'assets/images/MEDCOM.jpg',
+              width: 100.0,
+              height: 120.0,
+              fit: BoxFit.cover,
             ),
-          ),
-        ),
-        const Padding(
-          padding: EdgeInsets.only(bottom: 30.0),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(10),
-          child: ElevatedButton(
-            onPressed: () {
-              Provider.of<NavigationProvider>(context, listen: false)
-                  .animateToTabWithName('detailed info');
-            },
-            child: const Text('로그인', style: TextStyle(fontSize: 18.0)),
-          ),
-        ),
-      ],
-    )));
+            const Padding(padding: EdgeInsets.only(bottom: 10.0)),
+            const Padding(
+                padding: EdgeInsets.only(bottom: 30.0),
+                child:
+                    Text('Emergency Center', style: TextStyle(fontSize: 30.0))),
+            const Padding(
+                padding: EdgeInsets.only(bottom: 30.0),
+                child: Text('본 서비스를 이용하기 위해서는 사용자 코드를 입력하셔야 합니다.',
+                    style: TextStyle(fontSize: 13.0))),
+            SizedBox(
+              width: 300,
+              child: TextField(
+                decoration: const InputDecoration(
+                  hintText: "사용자 코드 입력",
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(bottom: 30.0),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Provider.of<NavigationProvider>(context, listen: false)
+                    .animateToTabWithName('detailed info');
+              },
+              child: const Text('로그인', style: TextStyle(fontSize: 18.0)),
+            ),
+          ],
+        ));
   }
 }
