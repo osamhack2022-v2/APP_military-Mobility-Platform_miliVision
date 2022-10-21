@@ -175,7 +175,6 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 
  ### 5. 수송업무 관리 기능
  #### 5-1. 관리자 페이지(django-admin)
-<br>
 <div align="center">
     <img src="images/example-3.gif" alt="관리자 페이지">
 </div>
@@ -193,7 +192,6 @@ o 기능 흐름:<br>
 <br>
 
  #### 5-2. 전체 이동현황 조회
-<br>
  <div align="center">
     <img src="images/example-4.gif" alt="관리자 페이지">
 </div>
