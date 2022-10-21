@@ -24,7 +24,7 @@ class HistoryListView extends StatelessWidget {
           Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: SizedBox(
-                  height: 80.0,
+                  height: 60.0,
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
