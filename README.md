@@ -191,23 +191,23 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 ## 기술 스택
 ### 📲 Front-end
 
-| Name     | Badge                                                                                                           | Version        | Website               |
-| -------- | --------------------------------------------------------------------------------------------------------------- | -------------  | --------------------- |
-| Dart     | ![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)          | undefined      | https://dart.dev/     |
-| Flutter  | ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white) | undefined      | https://flutter.dev/  |
+| Name     | Badge                                                                                                           | Website               |
+| -------- | --------------------------------------------------------------------------------------------------------------- | --------------------- |
+| Dart     | ![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)          | https://dart.dev/     |
+| Flutter  | ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white) | https://flutter.dev/  |
 
 ### 🖥️ Back-end
 
-| Name       | Badge                                                                                                          | Version    | Website                  |
-| ---------- | -------------------------------------------------------------------------------------------------------------- | ---------- | ------------------------ |
-| Python     | ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)         | undefined  | https://www.python.org/  |
-| DjangoREST | ![DjangoREST](https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray) | undefined | https://www.django-rest-framework.org/ |
+| Name       | Badge                                                                                                          | Website                  |
+| ---------- | -------------------------------------------------------------------------------------------------------------- | ------------------------ |
+| Python     | ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)         | https://www.python.org/  |
+| DjangoREST | ![DjangoREST](https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray) | https://www.django-rest-framework.org/ |
  
 ### 💾 Databases
 
-| Name     | Badge                                                                                                     | Version           | Website               |
-| -------- | --------------------------------------------------------------------------------------------------------- | ----------------- | --------------------- |
-| MariaDB  | ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)  | undefined         | https://mariadb.org/  |
+| Name     | Badge                                                                                                     | Website               |
+| -------- | --------------------------------------------------------------------------------------------------------- | --------------------- |
+| MariaDB  | ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=for-the-badge&logo=mariadb&logoColor=white)  | https://mariadb.org/  |
 
 [(Back to top)](#목차)
 
