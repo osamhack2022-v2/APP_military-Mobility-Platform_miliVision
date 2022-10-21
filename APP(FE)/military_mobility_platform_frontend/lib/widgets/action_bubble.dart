@@ -1,7 +1,10 @@
 import 'package:floating_action_bubble/floating_action_bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:military_mobility_platform_frontend/provider/auth.dart';
 import 'package:military_mobility_platform_frontend/provider/navigation.dart';
+import 'package:military_mobility_platform_frontend/provider/operation_info.dart';
+import 'package:military_mobility_platform_frontend/provider/reservation_list.dart';
 import 'package:military_mobility_platform_frontend/service/snackbar.dart';
 import 'package:military_mobility_platform_frontend/widgets/manage/safety_check_list.dart';
 import 'package:provider/provider.dart';
@@ -139,12 +142,32 @@ class ActionBubbleState extends State<ActionBubble>
   }
 
   void _evacuationRequest(BuildContext context) {
-    print('응급후송요청');
     _animationController.reverse();
+    navProvider.animateToTabWithName('evacuation request');
   }
 
   void _vehicleReturn(BuildContext context) {
-    print('차량반납');
-    _animationController.reverse();
+    try {
+      final authProvider = Provider.of<AuthProvider>(context, listen: false);
+      final operationInfoProvider =
+          Provider.of<OperationInfoProvider>(context, listen: false);
+      final reservationListProvider =
+          Provider.of<ReservationListProvider>(context, listen: false);
+      operationInfoProvider.vehicleReturnTrue();
+      operationInfoProvider
+          .returnVehicle(authProvider.authenticatedClient!,
+              reservationListProvider.selectedReservation!)
+          .then((_) {
+        reservationListProvider.deselect();
+        Provider.of<NavigationProvider>(context, listen: false)
+            .animateToTabWithName('list');
+        Snackbar(context).showSuccess('차량 반납이 완료되었습니다.');
+      });
+    } catch (exception) {
+      print(exception);
+      Snackbar(context).showError('차량 반납에 실패했습니다.');
+    } finally {
+      _animationController.reverse();
+    }
   }
 }

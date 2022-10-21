@@ -8,6 +8,7 @@ import 'package:military_mobility_platform_frontend/widgets/history_list/history
 import 'package:military_mobility_platform_frontend/widgets/list/detailed_info/detailed_info.dart';
 import 'package:military_mobility_platform_frontend/widgets/list/list.dart';
 import 'package:military_mobility_platform_frontend/widgets/manage/accident_report.dart';
+import 'package:military_mobility_platform_frontend/widgets/manage/emergency_evacuation_request.dart';
 import 'package:military_mobility_platform_frontend/widgets/manage/manage.dart';
 import 'package:military_mobility_platform_frontend/widgets/manage/operation_plan.dart';
 import 'package:military_mobility_platform_frontend/widgets/manage/recovery_team_request.dart';
@@ -134,6 +135,18 @@ final kTabs = [
     builder: () => const RecoveryTeamRequestContent(),
     appbar: AppBarVO(
         title: '구난차량요청',
+        leading: (context) => IconButton(
+            onPressed: () {
+              Provider.of<NavigationProvider>(context, listen: false)
+                  .animateToTabWithName('detailed info');
+            },
+            icon: const Icon(Icons.arrow_back_ios))),
+  ),
+  TabVO(
+    name: 'evacuation request',
+    builder: () => const EmergencyEvacuationRequestSet(),
+    appbar: AppBarVO(
+        title: '응급환자 후송요청',
         leading: (context) => IconButton(
             onPressed: () {
               Provider.of<NavigationProvider>(context, listen: false)
