@@ -28,7 +28,7 @@ class HistoryListTab extends StatelessWidget {
                 ]));
           } else {
             return const Padding(
-                padding: EdgeInsets.only(top: 17.0), child: HistoryListView());
+                padding: EdgeInsets.only(top: 11.0), child: HistoryListView());
           }
         });
   }

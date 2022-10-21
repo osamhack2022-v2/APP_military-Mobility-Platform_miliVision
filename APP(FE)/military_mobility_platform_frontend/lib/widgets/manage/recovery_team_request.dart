@@ -205,119 +205,114 @@ class _RecoveryTeamRequestContentState
     extends State<RecoveryTeamRequestContent> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Padding(padding: EdgeInsets.only(bottom: 10.0)),
-        const Padding(
-          padding: EdgeInsets.only(left: 10.0, bottom: 20.0),
-          child: Text('긴급출동 요청내용을 입력해주세요',
-              style: TextStyle(
-                fontSize: 18.0,
-              )),
-        ),
-        Padding(
-          padding: EdgeInsets.only(left: 30.0),
-          child: Container(
-              height: 235,
-              width: 340,
-              decoration: BoxDecoration(
-                border: Border.all(),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Column(children: [
-                Padding(
-                  padding: EdgeInsets.only(top: 20.0),
+    return Container(
+        padding: const EdgeInsets.symmetric(vertical: 40.0, horizontal: 50.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(padding: EdgeInsets.only(bottom: 10.0)),
+            const Padding(
+              padding: EdgeInsets.only(left: 10.0, bottom: 20.0),
+              child: Text('긴급출동 요청내용을 입력해주세요',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                  )),
+            ),
+            Container(
+                padding: const EdgeInsets.symmetric(
+                    vertical: 12.0, horizontal: 20.0),
+                decoration: BoxDecoration(
+                  border: Border.all(),
+                  borderRadius: BorderRadius.circular(20),
                 ),
-                Row(children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 15.0, right: 30.0),
-                    child: Text('차량번호',
-                        style: TextStyle(
-                            fontSize: 16.0, fontWeight: FontWeight.bold)),
-                  ),
-                  Flexible(
-                      child: TextField(
-                    decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      //Mobility.id 넣기
-                      hintText: "12하8839",
-                      hintStyle: TextStyle(color: Color(0xFFD6D6D6)),
+                child: Column(children: [
+                  Row(children: [
+                    Padding(
+                      padding: EdgeInsets.only(right: 30.0),
+                      child: Text('차량번호',
+                          style: TextStyle(
+                              fontSize: 16.0, fontWeight: FontWeight.bold)),
                     ),
-                  )),
-                ]),
-                Row(children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 15.0, right: 30.0),
-                    child: Text('차량위치',
-                        style: TextStyle(
-                            fontSize: 16.0, fontWeight: FontWeight.bold)),
-                  ),
-                  Flexible(
-                      child: TextField(
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: "서울특별시 동작구 OOO",
-                      hintStyle: TextStyle(color: Color(0xFFD6D6D6)),
+                    Flexible(
+                        child: TextField(
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
+                        //Mobility.id 넣기
+                        hintText: "12하8839",
+                        hintStyle: TextStyle(color: Color(0xFFD6D6D6)),
+                      ),
+                    )),
+                  ]),
+                  Row(children: [
+                    Padding(
+                      padding: EdgeInsets.only(right: 30.0),
+                      child: Text('차량위치',
+                          style: TextStyle(
+                              fontSize: 16.0, fontWeight: FontWeight.bold)),
                     ),
-                  )),
-                ]),
-                Row(children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 15.0, right: 14.0),
-                    child: Text('요청서비스',
-                        style: TextStyle(
-                            fontSize: 16.0, fontWeight: FontWeight.bold)),
-                  ),
-                  Flexible(
-                      child: TextField(
-                    onChanged: (val) {
-                      context
-                          .read<AccidentProvider>()
-                          .recoveryTeamRequestServiceSet(val);
-                    },
-                    decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      hintText: "타이어 펑크로 인한 교체",
-                      hintStyle: TextStyle(color: Color(0xFFD6D6D6)),
+                    Flexible(
+                        child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "서울특별시 동작구 OOO",
+                        hintStyle: TextStyle(color: Color(0xFFD6D6D6)),
+                      ),
+                    )),
+                  ]),
+                  Row(children: [
+                    Padding(
+                      padding: EdgeInsets.only(right: 14.0),
+                      child: Text('요청서비스',
+                          style: TextStyle(
+                              fontSize: 16.0, fontWeight: FontWeight.bold)),
                     ),
-                  )),
-                ]),
-                Row(children: [
-                  Padding(
-                    padding: EdgeInsets.only(left: 15.0, right: 30.0),
-                    child: Text('특이사항',
-                        style: TextStyle(
-                            fontSize: 16.0, fontWeight: FontWeight.bold)),
-                  ),
-                  Flexible(
-                      child: TextField(
-                    onChanged: (val) {
-                      context
-                          .read<AccidentProvider>()
-                          .recoveryTeamRequestNoteSet(val);
-                    },
-                    decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      hintText: "기타 특이사항을 입력해주세요.",
-                      hintStyle: TextStyle(color: Color(0xFFD6D6D6)),
+                    Flexible(
+                        child: TextField(
+                      onChanged: (val) {
+                        context
+                            .read<AccidentProvider>()
+                            .recoveryTeamRequestServiceSet(val);
+                      },
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "타이어 펑크로 인한 교체",
+                        hintStyle: TextStyle(color: Color(0xFFD6D6D6)),
+                      ),
+                    )),
+                  ]),
+                  Row(children: [
+                    Padding(
+                      padding: EdgeInsets.only(right: 30.0),
+                      child: Text('특이사항',
+                          style: TextStyle(
+                              fontSize: 16.0, fontWeight: FontWeight.bold)),
                     ),
-                  )),
-                ]),
-              ])),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(10),
-          child: ElevatedButton(
-            onPressed: () {
-              _postRecoveryTeam(context);
-            },
-            child: const Text('확인', style: TextStyle(fontSize: 18.0)),
-          ),
-        ),
-      ],
-    ));
+                    Flexible(
+                        child: TextField(
+                      onChanged: (val) {
+                        context
+                            .read<AccidentProvider>()
+                            .recoveryTeamRequestNoteSet(val);
+                      },
+                      decoration: const InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "기타 특이사항을 입력해주세요.",
+                        hintStyle: TextStyle(color: Color(0xFFD6D6D6)),
+                      ),
+                    )),
+                  ]),
+                ])),
+            Padding(
+              padding: const EdgeInsets.only(top: 17.0),
+              child: ElevatedButton(
+                onPressed: () {
+                  _postRecoveryTeam(context);
+                },
+                child: const Text('확인', style: TextStyle(fontSize: 18.0)),
+              ),
+            ),
+          ],
+        ));
   }
 
   void _postRecoveryTeam(BuildContext context) {
