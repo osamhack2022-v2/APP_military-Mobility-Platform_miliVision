@@ -183,30 +183,30 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 </div>
 
 ### 2. 필수 조건 안내
-* Flutter sdk : '>=2.18.1 <3.0.0'
-* dependencies :
+- Flutter sdk : '>=2.18.1 <3.0.0'
+- dependencies :
   cupertino_icons: ^1.0.2 <br>
-  provider: ^6.0.3
-  google_fonts: ^3.0.1
-  shared_preferences: ^2.0.15
-  json_serializable: ^6.4.1
-  intl: ^0.17.0
-  flutter_datetime_picker: ^1.5.1
-  fluttertoast: ^8.0.9
-  retrofit: ^3.3.1
-  dio: ^4.0.6
-  retrofit_generator: ^4.2.0
-  flutter_markdown: ^0.6.12
-  flutter_polyline_points: ^1.0.0
-  flutter_svg: ^1.1.5
-  google_maps_flutter: ^2.2.1
-  google_maps_flutter_web: ^0.4.0+3
-  map_pin_picker: ^0.0.1
-  geocoding: ^2.0.5
-  geolocator: ^9.0.2
-  latlong2: ^0.8.1
-  image_picker: ^0.8.4+4
-  location: ^4.4.0
+  provider: ^6.0.3 <br>
+  google_fonts: ^3.0.1 <br>
+  shared_preferences: ^2.0.15 <br>
+  json_serializable: ^6.4.1 <br>
+  intl: ^0.17.0 <br>
+  flutter_datetime_picker: ^1.5.1 <br>
+  fluttertoast: ^8.0.9 <br>
+  retrofit: ^3.3.1 <br>
+  dio: ^4.0.6 <br>
+  retrofit_generator: ^4.2.0 <br>
+  flutter_markdown: ^0.6.12 <br>
+  flutter_polyline_points: ^1.0.0 <br>
+  flutter_svg: ^1.1.5 <br>
+  google_maps_flutter: ^2.2.1 <br>
+  google_maps_flutter_web: ^0.4.0+3 <br>
+  map_pin_picker: ^0.0.1 <br>
+  geocoding: ^2.0.5 <br>
+  geolocator: ^9.0.2 <br>
+  latlong2: ^0.8.1 <br>
+  image_picker: ^0.8.4+4 <br>
+  location: ^4.4.0 <br>
 
 [(Back to top)](#목차)
 
