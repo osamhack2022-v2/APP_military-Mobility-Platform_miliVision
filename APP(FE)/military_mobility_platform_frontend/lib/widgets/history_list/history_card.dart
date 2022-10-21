@@ -33,9 +33,13 @@ class HistoryCard extends StatelessWidget {
   }
 
   Widget _buildLocationSection() {
-    final summary =
-        "출발지: ${history.departure}  🡆  목적지: ${history.destination}";
-    return Text(summary);
+    return Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+      Text("출발지: ${history.departure}"),
+      const Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10.0),
+          child: Icon(Icons.forward, size: 21.0)),
+      Text("목적지: ${history.destination}")
+    ]);
   }
 
   Widget _buildTimeSection() {
