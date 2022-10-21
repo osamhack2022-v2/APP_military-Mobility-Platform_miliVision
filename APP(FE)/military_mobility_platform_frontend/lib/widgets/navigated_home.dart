@@ -118,6 +118,13 @@ class NavigatedHomeState extends State<NavigatedHome> {
               Navigator.pop(context);
             },
           ),
+          ListTile(
+            title: Text('로그아웃', style: TextStyle(fontSize: 14.0)),
+            onTap: () {
+              Navigator.pop(context);
+              Provider.of<AuthProvider>(context, listen: false).logout();
+            },
+          ),
         ],
       ),
     );
