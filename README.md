@@ -197,9 +197,9 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 
 ## 설치 안내
 ```bash
-$ git clone git주소
-$ yarn or npm install
-$ yarn start or npm run start
+$ git clone https://github.com/osamhack2022-v2/APP_military-Mobility-Platform_miliVision
+$ cd ./APP\(FE\)/military_mobility_platform_frontend/
+$ flutter run -d web-server --web-hostname=0.0.0.0
 ```
 
 [(Back to top)](#목차)
