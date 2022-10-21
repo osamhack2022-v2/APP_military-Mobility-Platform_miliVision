@@ -305,17 +305,41 @@ class _APIService implements APIService {
   }
 
   @override
-  Future<PostAccidentRepDTO> postAccidentReport(dto) async {
+  Future<PostAccidentRepDTO> postAccidentReport(
+    car,
+    incident_type,
+    location,
+    image,
+  ) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(dto.toJson());
+    final _data = FormData();
+    _data.fields.add(MapEntry(
+      'car',
+      car.toString(),
+    ));
+    _data.fields.add(MapEntry(
+      'incident_type',
+      incident_type,
+    ));
+    _data.fields.add(MapEntry(
+      'location',
+      location,
+    ));
+    _data.files.add(MapEntry(
+      'image',
+      MultipartFile.fromFileSync(
+        image.path,
+        filename: image.path.split(Platform.pathSeparator).last,
+      ),
+    ));
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<PostAccidentRepDTO>(Options(
       method: 'POST',
       headers: _headers,
       extra: _extra,
+      contentType: 'multipart/form-data',
     )
             .compose(
               _dio.options,

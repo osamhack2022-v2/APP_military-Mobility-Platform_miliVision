@@ -57,31 +57,33 @@ class OperationInfoProvider extends ChangeNotifier {
     _operationPlan = _operationNote + " " + _operationPurpose;
     notifyListeners();
   }
-  
-  Future<void> confirmSafetyCheck(Dio authClient, ReservationDTO reservation) async {
+
+  Future<void> confirmSafetyCheck(
+      Dio authClient, ReservationDTO reservation) async {
     try {
       final dto = SafetyCheckDTO(
-          reservation_id: reservation.id,
-          safety_checklist: _safetyCheckBool);
+          reservation_id: reservation.id, safety_checklist: _safetyCheckBool);
+      APIService(authClient).confirmSafetyCheck(dto);
     } catch (exception) {
       return Future.error(exception.toString());
     }
   }
-    
-  Future<void> makeOperationPlan(Dio authClient, ReservationDTO reservation) async {
+
+  Future<void> makeOperationPlan(
+      Dio authClient, ReservationDTO reservation) async {
     try {
       final dto = OperationPlanDTO(
-          reservation_id: reservation.id,
-          operation_plan: _operationPlan);
+          reservation_id: reservation.id, operation_plan: _operationPlan);
+      APIService(authClient).makeOperationPlan(dto);
     } catch (exception) {
       return Future.error(exception.toString());
     }
   }
-    
+
   Future<void> returnVehicle(Dio authClient, ReservationDTO reservation) async {
     try {
-      final dto = OperationFinishDTO(
-          reservation_id: reservation.id); 
+      final dto = OperationFinishDTO(reservation_id: reservation.id);
+      APIService(authClient).returnVehicle(dto);
     } catch (exception) {
       return Future.error(exception.toString());
     }

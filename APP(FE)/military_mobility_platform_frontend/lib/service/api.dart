@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:military_mobility_platform_frontend/model/mileage.dart';
@@ -41,29 +42,30 @@ abstract class APIService {
 
   @GET('/mileage/history')
   Future<GetHistoriesResDTO> getHistories();
-  
+
   @POST('/tms/safety_checklist')
-  Future<void> confirmSafetyCheck(
-      @Body() SafetyCheckDTO dto);
-  
+  Future<void> confirmSafetyCheck(@Body() SafetyCheckDTO dto);
+
   @POST('/tms/add_operation_plan')
-  Future<void> makeOperationPlan(
-      @Body() OperationPlanDTO dto);
-  
+  Future<void> makeOperationPlan(@Body() OperationPlanDTO dto);
+
   @GET('/tms/finishing_using')
-  Future<void> returnVehicle(
-      @Body() OperationFinishDTO dto);
+  Future<void> returnVehicle(@Body() OperationFinishDTO dto);
 
   @GET('/incident/incident')
   Future<GetAccidentRepDTO> getAccidentReport();
-  
+
+  @MultiPart()
   @POST('/incident/incident')
   Future<PostAccidentRepDTO> postAccidentReport(
-      @Body() PostAccidentRepReqDTO dto);
+      @Part() int car,
+      @Part() String incident_type,
+      @Part() String location,
+      @Part() File image);
 
   @GET('/incident/rescue')
   Future<GetRecoveryTeamDTO> getRecoveryTeam();
-    
+
   @POST('/incident/rescue')
   Future<PostRecoveryTeamDTO> postRecoveryTeam(
       @Body() PostRecoveryTeamReqDTO dto);

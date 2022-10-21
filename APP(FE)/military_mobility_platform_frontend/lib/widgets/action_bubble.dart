@@ -1,9 +1,12 @@
 import 'package:floating_action_bubble/floating_action_bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:military_mobility_platform_frontend/provider/drive_info.dart';
+import 'package:military_mobility_platform_frontend/provider/auth.dart';
 import 'package:military_mobility_platform_frontend/provider/navigation.dart';
+import 'package:military_mobility_platform_frontend/provider/operation_info.dart';
+import 'package:military_mobility_platform_frontend/provider/reservation_list.dart';
 import 'package:military_mobility_platform_frontend/service/snackbar.dart';
+import 'package:military_mobility_platform_frontend/widgets/manage/safety_check_list.dart';
 import 'package:provider/provider.dart';
 
 class ActionBubble extends StatefulWidget {
@@ -17,6 +20,7 @@ class ActionBubbleState extends State<ActionBubble>
     with SingleTickerProviderStateMixin {
   late Animation<double> _animation;
   late AnimationController _animationController;
+  late NavigationProvider navProvider;
 
   @override
   void initState() {
@@ -38,6 +42,7 @@ class ActionBubbleState extends State<ActionBubble>
 
   @override
   Widget build(BuildContext context) {
+    navProvider = Provider.of<NavigationProvider>(context, listen: false);
     final theme = Theme.of(context);
     final textStyle = GoogleFonts.roboto(
         color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.bold);
@@ -117,32 +122,52 @@ class ActionBubbleState extends State<ActionBubble>
   }
 
   void _safetyChecklist(BuildContext context) {
-    print('안전점검표');
     _animationController.reverse();
+    navProvider.animateToTabWithName('checklist');
   }
 
   void _operationPlan(BuildContext context) {
-    print('운행계획표');
     _animationController.reverse();
+    navProvider.animateToTabWithName('operation plan');
   }
 
   void _accidentReport(BuildContext context) {
-    print('사고접수');
     _animationController.reverse();
+    navProvider.animateToTabWithName('accident report');
   }
 
   void _recoveryRequest(BuildContext context) {
-    print('구난차량요청');
     _animationController.reverse();
+    navProvider.animateToTabWithName('check location');
   }
 
   void _evacuationRequest(BuildContext context) {
-    print('응급후송요청');
     _animationController.reverse();
+    navProvider.animateToTabWithName('evacuation request');
   }
 
   void _vehicleReturn(BuildContext context) {
-    print('차량반납');
-    _animationController.reverse();
+    try {
+      final authProvider = Provider.of<AuthProvider>(context, listen: false);
+      final operationInfoProvider =
+          Provider.of<OperationInfoProvider>(context, listen: false);
+      final reservationListProvider =
+          Provider.of<ReservationListProvider>(context, listen: false);
+      operationInfoProvider.vehicleReturnTrue();
+      operationInfoProvider
+          .returnVehicle(authProvider.authenticatedClient!,
+              reservationListProvider.selectedReservation!)
+          .then((_) {
+        reservationListProvider.deselect();
+        Provider.of<NavigationProvider>(context, listen: false)
+            .animateToTabWithName('list');
+        Snackbar(context).showSuccess('차량 반납이 완료되었습니다.');
+      });
+    } catch (exception) {
+      print(exception);
+      Snackbar(context).showError('차량 반납에 실패했습니다.');
+    } finally {
+      _animationController.reverse();
+    }
   }
 }

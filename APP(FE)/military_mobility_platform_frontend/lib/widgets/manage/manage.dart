@@ -5,8 +5,6 @@ import 'package:military_mobility_platform_frontend/widgets/manage/accident_repo
 import 'package:military_mobility_platform_frontend/widgets/manage/recovery_team_request.dart';
 import 'package:military_mobility_platform_frontend/widgets/manage/emergency_evacuation_request.dart';
 import 'package:military_mobility_platform_frontend/widgets/manage/vehicle_return.dart';
-import 'package:military_mobility_platform_frontend/provider/operation_info.dart';
-import 'package:provider/provider.dart';
 
 class ManageTab extends StatelessWidget {
   const ManageTab({super.key});
