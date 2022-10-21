@@ -49,8 +49,8 @@ abstract class APIService {
   @POST('/tms/add_operation_plan')
   Future<void> makeOperationPlan(@Body() OperationPlanDTO dto);
 
-  @GET('/tms/finishing_using')
-  Future<void> returnVehicle(@Body() OperationFinishDTO dto);
+  @GET('/tms/finish_using')
+  Future<void> returnVehicle(@Query("reservation_id") int reservationID);
 
   @GET('/incident/incident')
   Future<GetAccidentRepDTO> getAccidentReport();

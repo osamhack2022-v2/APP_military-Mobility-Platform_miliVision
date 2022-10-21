@@ -146,7 +146,7 @@ class ActionBubbleState extends State<ActionBubble>
     navProvider.animateToTabWithName('evacuation request');
   }
 
-  void _vehicleReturn(BuildContext context) {
+  void _vehicleReturn(BuildContext context) async {
     try {
       final authProvider = Provider.of<AuthProvider>(context, listen: false);
       final operationInfoProvider =
@@ -154,11 +154,13 @@ class ActionBubbleState extends State<ActionBubble>
       final reservationListProvider =
           Provider.of<ReservationListProvider>(context, listen: false);
       operationInfoProvider.vehicleReturnTrue();
-      operationInfoProvider
-          .returnVehicle(authProvider.authenticatedClient!,
-              reservationListProvider.selectedReservation!)
-          .then((_) {
-        reservationListProvider.deselect();
+      await operationInfoProvider.returnVehicle(
+          authProvider.authenticatedClient!,
+          reservationListProvider.selectedReservation!);
+      reservationListProvider.deselect();
+      await reservationListProvider
+          .getReservations(authProvider.authenticatedClient!);
+      WidgetsBinding.instance.addPostFrameCallback((_) {
         Provider.of<NavigationProvider>(context, listen: false)
             .animateToTabWithName('list');
         Snackbar(context).showSuccess('차량 반납이 완료되었습니다.');

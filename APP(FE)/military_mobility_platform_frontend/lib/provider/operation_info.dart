@@ -82,8 +82,7 @@ class OperationInfoProvider extends ChangeNotifier {
 
   Future<void> returnVehicle(Dio authClient, ReservationDTO reservation) async {
     try {
-      final dto = OperationFinishDTO(reservation_id: reservation.id);
-      APIService(authClient).returnVehicle(dto);
+      APIService(authClient).returnVehicle(reservation.id);
     } catch (exception) {
       return Future.error(exception.toString());
     }

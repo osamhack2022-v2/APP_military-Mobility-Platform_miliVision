@@ -258,12 +258,11 @@ class _APIService implements APIService {
   }
 
   @override
-  Future<void> returnVehicle(dto) async {
+  Future<void> returnVehicle(reservationID) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{r'reservation_id': reservationID};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
-    _data.addAll(dto.toJson());
     await _dio.fetch<void>(_setStreamType<void>(Options(
       method: 'GET',
       headers: _headers,
@@ -271,7 +270,7 @@ class _APIService implements APIService {
     )
         .compose(
           _dio.options,
-          '/tms/finishing_using',
+          '/tms/finish_using',
           queryParameters: queryParameters,
           data: _data,
         )
