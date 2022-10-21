@@ -172,6 +172,10 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 </table>
 
  ### 5. 관리자 페이지(django-admin)
+ 
+<div align="center">
+    <img src="images/example-3.gif" alt="database 화면">
+</div>
 
 <table>
   <tr>
