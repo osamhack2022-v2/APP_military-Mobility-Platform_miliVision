@@ -156,6 +156,22 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 
  ### 3. 운전병 마일리지 전산화
 
+<table>
+  <tr>
+    <td align="center" width="50%"><img src="images/img02.png" alt="사고접수" width="195" height="422" /></td>
+    <td>o 기능명: 군 이동수단의 입체적인 관리<br><br>
+	o 개요: 군 이동수단의 관리 화면입니다. 안전 점검표를 차량 운행 전에 작성하고, 운행계획을 작성할 수 있습니다. 또한 사고접수, 구난차량 요청, 응급환자 후송 요청 등 응급상황에 대처할 수 있는 기능들을 포함하고 있습니다. 또한 차량 이용 완료 후에는 반납까지 one-stop으로 서비스를 받을 수 있습니다.<br><br>
+	o 엑터명: 탑승자<br><br>
+	o 사전 조건: 배차 신청 및 승인이 완료되어야 함.<br>
+	o 사후 조건: -<br><br>
+	o 기능 흐름:<br>
+	   1. 사용자는 안전점검표 작성을 통해 차량의 안전 운행을 준비합니다.<br>
+	   2. 운행 계획에 출발지, 도착지, 이동 경로, 특이사항 등을 기재합니다.<br>
+	   3. 차량 사고 발생 시 사고접수, 구난차량 요청, 응급환자 후송 요청 등을 실시합니다.<br>
+	   4. 차량 이용 완료 후 차량 반납 탭을 클릭해 차량 이용을 종료합니다.</td>
+  </tr>
+</table>
+
 [(Back to top)](#목차)
 
 ## App 구성 및 필수 조건 안내
@@ -163,12 +179,12 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 ### 1. 체계 구성도
 
 <div align="center">
-    <img src="images/system_architecture.PNG" alt="시스템 아키텍쳐" width=800 height=400>
+    <img src="images/system_architecture.PNG" alt="시스템 아키텍쳐">
 </div>
 
 ### 2. 필수 조건 안내
 * 크로스 플랫폼: iOS, Android 사용 가능
-* 권장: 
+* 
 
 [(Back to top)](#목차)
 
