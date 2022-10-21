@@ -175,6 +175,9 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 
  ### 5. 수송업무 관리 기능
  #### 5-1. 관리자 페이지(django-admin)
+<div align="center">
+    <img src="images/example-3.gif" alt="관리자 페이지">
+</div>
 o 기능명: 수송업무 관리자 페이지
 o 개요: 수송업무 담당자가 접속하여 사용자, 차량, 이력 등을 관리할 수 있는 페이지입니다. 차량들을 등록하고 관리할 수 있으며, 배차를 승인하고 반려할 수 있습니다.<br><br>
 o 엑터명: 수송업무 담당자<br><br>
@@ -185,9 +188,6 @@ o 기능 흐름:<br>
 2. 운행 계획에 출발지, 도착지, 이동 경로, 특이사항 등을 기재합니다.<br>
 3. 차량 사고 발생 시 사고접수, 구난차량 요청, 응급환자 후송 요청 등을 실시합니다.<br>
 4. 차량 이용 완료 후 차량 반납 탭을 클릭해 차량 이용을 종료합니다.</td>
-<div align="center">
-    <img src="images/example-3.gif" alt="관리자 페이지">
-</div>
 <br>
 
  #### 5-2. 전체 이동현황 조회
