@@ -1,9 +1,9 @@
 import 'package:floating_action_bubble/floating_action_bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:military_mobility_platform_frontend/provider/drive_info.dart';
 import 'package:military_mobility_platform_frontend/provider/navigation.dart';
 import 'package:military_mobility_platform_frontend/service/snackbar.dart';
+import 'package:military_mobility_platform_frontend/widgets/manage/safety_check_list.dart';
 import 'package:provider/provider.dart';
 
 class ActionBubble extends StatefulWidget {
@@ -17,6 +17,7 @@ class ActionBubbleState extends State<ActionBubble>
     with SingleTickerProviderStateMixin {
   late Animation<double> _animation;
   late AnimationController _animationController;
+  late NavigationProvider navProvider;
 
   @override
   void initState() {
@@ -38,6 +39,7 @@ class ActionBubbleState extends State<ActionBubble>
 
   @override
   Widget build(BuildContext context) {
+    navProvider = Provider.of<NavigationProvider>(context, listen: false);
     final theme = Theme.of(context);
     final textStyle = GoogleFonts.roboto(
         color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.bold);
@@ -117,8 +119,8 @@ class ActionBubbleState extends State<ActionBubble>
   }
 
   void _safetyChecklist(BuildContext context) {
-    print('안전점검표');
     _animationController.reverse();
+    navProvider.animateToTabWithName('checklist');
   }
 
   void _operationPlan(BuildContext context) {

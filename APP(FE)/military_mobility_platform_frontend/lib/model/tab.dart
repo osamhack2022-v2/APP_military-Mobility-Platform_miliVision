@@ -23,5 +23,5 @@ class TabVO {
   final Widget Function() builder;
   final AppBarVO appbar;
   final NavBarItemVO? navBarItem;
-  final Widget Function(BuildContext)? floatingButton;
+  final Widget? Function(BuildContext)? floatingButton;
 }

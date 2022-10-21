@@ -8,6 +8,7 @@ import 'package:military_mobility_platform_frontend/widgets/history_list/history
 import 'package:military_mobility_platform_frontend/widgets/list/detailed_info/detailed_info.dart';
 import 'package:military_mobility_platform_frontend/widgets/list/list.dart';
 import 'package:military_mobility_platform_frontend/widgets/manage/manage.dart';
+import 'package:military_mobility_platform_frontend/widgets/manage/safety_check_list.dart';
 import 'package:military_mobility_platform_frontend/widgets/request/request.dart';
 import 'package:military_mobility_platform_frontend/widgets/request/select_mobility/select_mobility.dart';
 import 'package:provider/provider.dart';
@@ -58,7 +59,25 @@ final kTabs = [
               icon: const Icon(Icons.arrow_back_ios)),
           actions: (_) => []),
       builder: () => const DetailedInfoTab(),
-      floatingButton: (context) => const ActionBubble()),
+      floatingButton: (context) {
+        final reservationProvider =
+            Provider.of<ReservationListProvider>(context);
+        if (reservationProvider.selectedReservation == null ||
+            !reservationProvider.selectedReservation!.accepted) return null;
+        return const ActionBubble();
+      }),
+  TabVO(
+    name: 'checklist',
+    builder: () => const SafetyCheckListSet(),
+    appbar: AppBarVO(
+        title: '안전점검표',
+        leading: (context) => IconButton(
+            onPressed: () {
+              Provider.of<NavigationProvider>(context, listen: false)
+                  .animateToTabWithName('detailed info');
+            },
+            icon: const Icon(Icons.arrow_back_ios))),
+  ),
   TabVO(
       name: 'history',
       builder: () => const HistoryListTab(),
@@ -68,8 +87,4 @@ final kTabs = [
       name: 'drive',
       builder: () => const DriveTab(),
       appbar: const AppBarVO(title: '운행시작')),
-  TabVO(
-      name: 'manage',
-      builder: () => const ManageTab(),
-      appbar: const AppBarVO(title: '차량관리')),
 ];
