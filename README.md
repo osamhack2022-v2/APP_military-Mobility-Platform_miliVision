@@ -202,7 +202,7 @@ o 기능 흐름:<br>
 3. 차량 사고 발생 시 사고접수, 구난차량 요청, 응급환자 후송 요청 등을 실시합니다.<br>
 4. 차량 이용 완료 후 차량 반납 탭을 클릭해 차량 이용을 종료합니다.</td>
 <div align="center">
-    <img src="images/example-3.gif" alt="관리자 페이지">
+    <img src="images/example-4.gif" alt="관리자 페이지">
 </div>
 
 [(Back to top)](#목차)
