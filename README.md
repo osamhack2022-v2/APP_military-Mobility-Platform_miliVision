@@ -34,6 +34,10 @@
 4. 수송업무 담당자는 자신이 관리하는 이동수단(차량)의 배차를 승인하고 목록을 조회하고 관리할 수 있습니다.<br>
 
 ### 발표 자료(수정 작업중)
+<div align="center">
+    <img src="images/ppt.gif" alt="발표자료">
+</div>
+링크:
 https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2qVnJPBkTqsEBGGmw-ERHwm6VLj499oOF5rKSbOB6h0kazxMD/pub?start=false&loop=false&delayms=3000
 
 ### 시연 영상(추가 예정)
@@ -192,7 +196,7 @@ o 기능 흐름:<br>
 <br>
 
  #### 5-2. 전체 이동현황 조회
- <div align="center">
+<div align="center">
     <img src="images/example-4.gif" alt="관리자 페이지">
 </div>
 <br>
