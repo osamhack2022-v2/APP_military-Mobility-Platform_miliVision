@@ -10,6 +10,7 @@ import 'package:military_mobility_platform_frontend/widgets/list/list.dart';
 import 'package:military_mobility_platform_frontend/widgets/manage/accident_report.dart';
 import 'package:military_mobility_platform_frontend/widgets/manage/manage.dart';
 import 'package:military_mobility_platform_frontend/widgets/manage/operation_plan.dart';
+import 'package:military_mobility_platform_frontend/widgets/manage/recovery_team_request.dart';
 import 'package:military_mobility_platform_frontend/widgets/manage/safety_check_list.dart';
 import 'package:military_mobility_platform_frontend/widgets/request/request.dart';
 import 'package:military_mobility_platform_frontend/widgets/request/select_mobility/select_mobility.dart';
@@ -117,10 +118,22 @@ final kTabs = [
             icon: const Icon(Icons.arrow_back_ios))),
   ),
   TabVO(
-    name: 'operation plan',
-    builder: () => const OperationPlanSet(),
+    name: 'check location',
+    builder: () => const VehicleLocationCheck(),
     appbar: AppBarVO(
-        title: '운행계획작성',
+        title: '차량위치확인',
+        leading: (context) => IconButton(
+            onPressed: () {
+              Provider.of<NavigationProvider>(context, listen: false)
+                  .animateToTabWithName('detailed info');
+            },
+            icon: const Icon(Icons.arrow_back_ios))),
+  ),
+  TabVO(
+    name: 'recovery request',
+    builder: () => const RecoveryTeamRequestContent(),
+    appbar: AppBarVO(
+        title: '구난차량요청',
         leading: (context) => IconButton(
             onPressed: () {
               Provider.of<NavigationProvider>(context, listen: false)

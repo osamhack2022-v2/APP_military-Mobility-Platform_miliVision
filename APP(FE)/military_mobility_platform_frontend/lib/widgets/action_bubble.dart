@@ -134,8 +134,8 @@ class ActionBubbleState extends State<ActionBubble>
   }
 
   void _recoveryRequest(BuildContext context) {
-    print('구난차량요청');
     _animationController.reverse();
+    navProvider.animateToTabWithName('check location');
   }
 
   void _evacuationRequest(BuildContext context) {
