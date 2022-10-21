@@ -184,7 +184,7 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 
 ### 2. 필수 조건 안내
 - Flutter sdk : '>=2.18.1 <3.0.0'
-- dependencies :
+- dependencies : <br>
   cupertino_icons: ^1.0.2 <br>
   provider: ^6.0.3 <br>
   google_fonts: ^3.0.1 <br>
