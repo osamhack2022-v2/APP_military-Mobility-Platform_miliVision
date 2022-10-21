@@ -41,8 +41,8 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 [(Back to top)](#목차)
 
 ## 기능 설명
- ### 0. 로그인 / 회원가입
- #### 0-1. 로그인  
+ ### 1. 로그인 / 회원가입
+ #### 1-1. 로그인  
 <table>
   <tr>
     <td align="center" width="50%"><img src="images/img03.png" alt="로그인" width="195" height="422" /></td>
@@ -60,7 +60,7 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 </table>
 <br>
 
- #### 0-2. 회원가입(추가 예정)
+ #### 1-2. 회원가입(추가 예정)
  <table>
   <tr>
     <td align="center" width="50%"><img src="images/img07.png" alt="회원가입" width="195" height="422" /></td>
@@ -81,8 +81,8 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 </table>
 <br>
 
- ### 1. 실시간 군 이동수단 배차 신청 / 확인
- #### 1-1. 배차 신청 
+ ### 2. 실시간 군 이동수단 배차 신청 / 확인
+ #### 2-1. 배차 신청 
 <table>
   <tr>
     <td align="center" width="50%"><img src="images/example-1.gif" alt="배차신청" width="195" height="422" /></td>
@@ -100,7 +100,7 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 </table>
 <br>
 
- #### 1-2. 차량 선택 
+ #### 2-2. 차량 선택 
 <table>
   <tr>
     <td align="center" width="50%"><img src="images/img04.png" alt="차량선택" width="195" height="422" /></td>
@@ -117,7 +117,7 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 </table>
 <br>
 
- #### 1-3. 배차 확인
+ #### 2-3. 배차 확인
 <table>
   <tr>
     <td align="center" width="50%"><img src="images/img05.png" alt="배차확인" width="195" height="422" /></td>
@@ -135,7 +135,7 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 </table>
 <br>
 
- ### 2. 군 이동수단의 one-stop 관리 서비스
+ ### 3. 군 이동수단의 one-stop 관리 서비스
  
 <table>
   <tr>
@@ -153,11 +153,11 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
   </tr>
 </table>
 
- ### 3. 운전병 마일리지 전산화
+ ### 4. 운행이력(운전병 마일리지)
 
 <table>
   <tr>
-    <td align="center" width="50%"><img src="images/img02.png" alt="사고접수" width="195" height="422" /></td>
+    <td align="center" width="50%"><img src="images/example-2.gif" alt="운행이력" width="195" height="422" /></td>
     <td>o 기능명: 군 이동수단의 입체적인 관리<br><br>
 	o 개요: 군 이동수단의 관리 화면입니다. 안전 점검표를 차량 운행 전에 작성하고, 운행계획을 작성할 수 있습니다. 또한 사고접수, 구난차량 요청, 응급환자 후송 요청 등 응급상황에 대처할 수 있는 기능들을 포함하고 있습니다. 또한 차량 이용 완료 후에는 반납까지 one-stop으로 서비스를 받을 수 있습니다.<br><br>
 	o 엑터명: 탑승자<br><br>
