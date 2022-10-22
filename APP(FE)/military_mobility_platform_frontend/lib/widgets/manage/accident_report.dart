@@ -231,8 +231,8 @@ class _AccidentReportSetImageState extends State<AccidentReportSetImage> {
                                     child: ListTile(
                                       title: Center(
                                         child: Text(
-                                          "Cancel",
-                                          style: TextStyle(color: Colors.white),
+                                          "취소",
+                                          style: TextStyle(color: Colors.black),
                                         ),
                                       ),
                                       onTap: () {
@@ -245,7 +245,7 @@ class _AccidentReportSetImageState extends State<AccidentReportSetImage> {
                             });
                       },
                       child: const Text('사진 업로드하기',
-                          style: TextStyle(fontSize: 18.0)),
+                          style: TextStyle(fontSize: 18.0, color: Colors.white)),
                     ),
                   ),
                   /* 수정 전 ui
