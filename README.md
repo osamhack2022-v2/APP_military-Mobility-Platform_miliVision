@@ -145,7 +145,7 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
   <tr>
     <td align="center" width="50%"><img src="images/example-8.gif" alt="차량관리" width="195" height="422" /></td>
     <td>o 기능명: 군 이동수단의 입체적인 관리<br><br>
-	o 개요: 군 이동수단의 관리 화면입니다. 안전 점검표를 차량 운행 전에 작성하고, 운행계획을 작성할 수 있습니다. 또한 사고접수, 구난차량 요청, 응급환자 후송 요청 등 응급상황에 대처할 수 있는 기능들을 포함하고 있습니다. 또한 차량 이용 완료 후에는 반납까지 one-stop으로 서비스를 받을 수 있습니다.<br><br>
+	o 개요: 군 이동수단의 관리 화면입니다. 안전 점검표를 차량 운행 전에 작성하고, 운행계획을 작성할 수 있습니다. 또한 사고접수, 구난차량 요청, 응급환자 후송 요청 등 응급상황에 대처할 수 있는 기능들을 포함하고 있습니다. 또한 차량 이용 완료 후에는 반납까지 one-stop으로 차량 관리 서비스를 받을 수 있습니다.<br><br>
 	o 엑터명: 탑승자<br><br>
 	o 사전 조건: 배차 신청 및 승인이 완료되어야 함.<br>
 	o 사후 조건: -<br><br>
@@ -159,12 +159,12 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 <br>
 
  ### 4. 운전병 마일리지 전산화
- #### 2-1. 주행 기록
+ #### 4-1. 주행 기록
 <table>
   <tr>
-    <td align="center" width="50%"><img src="images/example-7.gif" alt="배차신청" width="195" height="422" /></td>
-    <td>o 기능명: 배차 신청<br><br>
-     	o 개요: 군 이동수단(차량) 관련 실시간 배차신청 화면입니다. 출발지 목적지를 설정할 수 있으며, 탑승인원 그리고 경유지 등 세부사항을 설정할 수 있습니다. 군 이동수단의 효율적인 이용을 위해 세부 옵션을 같이 신청받아서 유동적으로 활용할 수 있습니다. 행선지가 같거나 시간을 분배해서 차량을 사용할 수 있다면 효율적으로 이용할 수 있습니다.<br><br>
+    <td align="center" width="50%"><img src="images/example-7.gif" alt="주행기록" width="195" height="422" /></td>
+    <td>o 기능명: 주행 기록<br><br>
+     	o 개요: 군 이동수단(차량)의 운행간 운행경로, 운행시간, 운행거리(KM)를 기록할 수 있는 화면입니다. 운행 시작 버튼을 클릭하면 주행 기록이 시작되고, 종료 버튼을 클릭하면 주행 기록이 종료됩니다..<br><br>
 	o 엑터명: 탑승자<br><br>
 	o 사전 조건: 회원 가입이 되어있어야 함.<br>
 	o 사후 조건: -<br><br>
@@ -177,7 +177,7 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 </table>
 <br>
 
- #### 2-2. 운행내역 조회(총 km 누적)
+ #### 4-2. 운행이력 조회
 <table>
   <tr>
     <td align="center" width="50%"><img src="images/example-2.gif" alt="운행이력" width="195" height="422" /></td>
