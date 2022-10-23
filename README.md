@@ -126,15 +126,15 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
   <tr>
     <td align="center" width="50%"><img src="images/img05.png" alt="배차확인" width="195" height="422" /></td>
     <td>o 기능명: 배차 확인<br><br>
-     	o 개요: 배차 확인 화면에서는 탑승자가 신청한 희망 차량에 대한 예약 진행 현황을 확인할 수 있습니다. 상태는 '예약진행중', '예약불가', '예약확정'으로 나뉘며, 탑승자는 배차 취소 및 해당 차량 상세보기를 할 수 있습니다.<br><br>
+     	o 개요: 배차 확인 화면에서는 탑승자가 신청한 차량에 대한 예약 진행 현황을 확인할 수 있습니다. 상태는 '배차진행중', '배차불가', '배차확정'으로 나뉘며, 탑승자는 배차 취소 및 해당 차량 상세보기 메뉴를 사용할 수 있습니다.<br><br>
 	o 엑터명: 탑승자<br><br>
 	o 사전 조건: 배차 신청 및 차량 선택이 완료되어야함.<br>
 	o 사후 조건: -<br><br>
 	o 기능 흐름:<br>
-	   1. 사용자는 본인이 배차 신청한 내역을 확인할 수 있습니다. <br>
+	   1. 사용자는 본인이 신청한 배차 진행 현황을 확인할 수 있습니다. <br>
 	   2. 신청한 이동수단에 대한 외관 사진, 차량번호, 특이사항 등을 확인할 수 있습니다.<br>
 	   3. 사용자는 '취소하기' 버튼을 클릭하여 배차 신청을 취소할 수 있습니다.<br>
-	   4. 사용자는 '상세보기' 버튼을 클릭하여 차량 정보를 확인할 수 있습니다.<br></td>
+	   4. 사용자는 '상세보기' 버튼을 클릭하여 차량 상세 정보를 확인할 수 있습니다.<br></td>
   </tr>
 </table>
 <br>
@@ -143,7 +143,7 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
  
 <table>
   <tr>
-    <td align="center" width="50%"><img src="images/example-8.gif" alt="사고접수" width="195" height="422" /></td>
+    <td align="center" width="50%"><img src="images/example-8.gif" alt="차량관리" width="195" height="422" /></td>
     <td>o 기능명: 군 이동수단의 입체적인 관리<br><br>
 	o 개요: 군 이동수단의 관리 화면입니다. 안전 점검표를 차량 운행 전에 작성하고, 운행계획을 작성할 수 있습니다. 또한 사고접수, 구난차량 요청, 응급환자 후송 요청 등 응급상황에 대처할 수 있는 기능들을 포함하고 있습니다. 또한 차량 이용 완료 후에는 반납까지 one-stop으로 서비스를 받을 수 있습니다.<br><br>
 	o 엑터명: 탑승자<br><br>
