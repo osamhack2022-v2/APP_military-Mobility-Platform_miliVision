@@ -49,7 +49,7 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
  #### 1-1. 로그인  
 <table>
   <tr>
-    <td align="center" width="50%"><img src="images/img03.png" alt="로그인" width="195" height="422" /></td>
+    <td align="center" width="50%"><img src="images/example-5.gif" alt="로그인" width="195" height="422" /></td>
     <td>o 기능명: 로그인<br><br>
      	o 개요: 사용자 인증을 위한 로그인 화면입니다. 아이디와 비밀번호를 입력하고 허가된 사용자만 app에 접속할 수 있습니다. <br><br>
 	o 엑터명: 탑승자, 수송업무 담당자, 운전자<br><br>
@@ -67,7 +67,7 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
  #### 1-2. 회원가입(추가 예정)
  <table>
   <tr>
-    <td align="center" width="50%"><img src="images/img07.png" alt="회원가입" width="195" height="422" /></td>
+    <td align="center" width="50%"><img src="images/example-6.gif" alt="회원가입" width="195" height="422" /></td>
     <td>o 기능명: 회원가입<br><br>
      	o 개요: 사용자 신청을 위한 회원가입 화면입니다. 아이디, 이름, 계급, 소속부대, 비밀번호, 권한을 등록합니다.<br><br>
 	o 엑터명: 탑승자, 수송업무 담당자, 운전자<br><br>
