@@ -46,7 +46,7 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 
 ## 기능 설명
  ### 1. 로그인 / 회원가입
- #### 1-1. 로그인  
+ #### 1-1. 로그인
 <table>
   <tr>
     <td align="center" width="50%"><img src="images/example-5.gif" alt="로그인" width="195" height="422" /></td>
@@ -64,19 +64,19 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
 </table>
 <br>
 
- #### 1-2. 회원가입(추가 예정)
+ #### 1-2. 회원가입
  <table>
   <tr>
     <td align="center" width="50%"><img src="images/example-6.gif" alt="회원가입" width="195" height="422" /></td>
     <td>o 기능명: 회원가입<br><br>
-     	o 개요: 사용자 신청을 위한 회원가입 화면입니다. 아이디, 이름, 계급, 소속부대, 비밀번호, 권한을 등록합니다.<br><br>
+     	o 개요: 사용자 신청을 위한 회원가입 화면입니다. 아이디, 이름, 이메일, 소속부대, 비밀번호, 권한을 등록합니다.<br><br>
 	o 엑터명: 탑승자, 수송업무 담당자, 운전자<br><br>
 	o 사전 조건: 현역 간부, 군무원, 용사 신분에 해당하여야 함.<br>
 	o 사후 조건: -<br><br>
 	o 기능 흐름:<br>
 	    1. 사용자는 아이디를 입력합니다.<br>
 	    2. 사용자는 이름을 입력합니다.<br>
-	    3. 사용자는 계급을 입력합니다.<br>
+	    3. 사용자는 이메일을 입력합니다.<br>
 	    4. 사용자는 소속부대를 입력합니다.<br>
 	    5. 사용자는 비밀번호를 입력합니다.<br>
 	    6. 사용자는 권한을 선택합니다.<br>
