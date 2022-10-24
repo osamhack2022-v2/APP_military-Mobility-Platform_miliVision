@@ -41,6 +41,9 @@
 https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2qVnJPBkTqsEBGGmw-ERHwm6VLj499oOF5rKSbOB6h0kazxMD/pub?start=false&loop=false&delayms=3000
 
 ### 시연 영상(추가 예정)
+<div align="center">
+    <img src="images/demonstration_video.gif" alt="시연영상">
+</div>
 
 [(Back to top)](#목차)
 
