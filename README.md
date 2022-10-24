@@ -107,7 +107,7 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
  #### 2-2. 차량 선택 
 <table>
   <tr>
-    <td align="center" width="50%"><img src="images/static1.png" alt="차량선택" width="195" height="422" /></td>
+    <td align="center" width="50%"><img src="images/static1.PNG" alt="차량선택" width="195" height="422" /></td>
     <td>o 기능명: 차량 선택<br><br>
      	o 개요: 1-1. 배차 신청 화면에서 설정한 출발지 및 도착지, 탑승인원,차량 이용시간 등에 따라 선택할 수 있는 차량 목록이 리스트 형태로 도시됩니다. 차량의 외관 사진, 차량 번호, 색상 등에 대한 정보를 볼 수 있으며, 선택하기 버튼을 누르면 실시간으로 배차 신청을 할 수 있습니다.<br><br>
 	o 엑터명: 탑승자<br><br>
@@ -124,7 +124,7 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
  #### 2-3. 배차 확인
 <table>
   <tr>
-    <td align="center" width="50%"><img src="images/static2.png" alt="배차확인" width="195" height="422" /></td>
+    <td align="center" width="50%"><img src="images/static2.PNG" alt="배차확인" width="195" height="422" /></td>
     <td>o 기능명: 배차 확인<br><br>
      	o 개요: 배차 확인 화면에서는 탑승자가 신청한 차량에 대한 예약 진행 현황을 확인할 수 있습니다. 상태는 '배차진행중', '배차불가', '배차확정'으로 나뉘며, 탑승자는 배차 취소 및 해당 차량 상세보기 메뉴를 사용할 수 있습니다.<br><br>
 	o 엑터명: 탑승자<br><br>
