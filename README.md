@@ -143,7 +143,7 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
  
 <table>
   <tr>
-    <td align="center" width="50%"><img src="images/example-8.gif" alt="차량관리" width="195" height="422" /></td>
+    <td align="center" width="50%"><img src="images/dynamic1.gif" alt="차량관리" width="195" height="422" /></td>
     <td>o 기능명: 군 이동수단의 입체적인 관리<br><br>
 	o 개요: 군 이동수단의 관리 화면입니다. 안전 점검표를 차량 운행 전에 작성하고, 운행계획을 작성할 수 있습니다. 또한 사고접수, 구난차량 요청, 응급환자 후송 요청 등 응급상황에 대처할 수 있는 기능들을 포함하고 있습니다. 또한 차량 이용 완료 후에는 반납까지 one-stop으로 차량 관리 서비스를 받을 수 있습니다.<br><br>
 	o 엑터명: 탑승자<br><br>
@@ -162,7 +162,7 @@ https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2q
  #### 4-1. 주행 기록
 <table>
   <tr>
-    <td align="center" width="50%"><img src="images/example-7.gif" alt="주행기록" width="195" height="422" /></td>
+    <td align="center" width="50%"><img src="images/dynamic2.gif" alt="주행기록" width="195" height="422" /></td>
     <td>o 기능명: 주행 기록<br><br>
      	o 개요: 군 이동수단(차량)의 운행간 운행경로, 운행시간, 운행거리(KM)를 기록할 수 있는 화면입니다. 운행 시작 버튼을 클릭하면 주행 기록이 시작되고, 종료 버튼을 클릭하면 주행 기록이 종료됩니다..<br><br>
 	o 엑터명: 운행자<br><br>
