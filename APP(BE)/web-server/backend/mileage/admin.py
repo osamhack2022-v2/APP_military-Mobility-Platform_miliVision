@@ -3,6 +3,7 @@ from mileage.models import *
 
 # Register your models here.
 
+@admin.display(description="Firm URL")
 class HistoryAdmin(admin.ModelAdmin):
     model = History
     list_display = ('id', 'user_id', 'car_id', 'department', 'arrival', 'datetime', 'total_time', 'total_range')

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'login',
     'tms',
     'mileage',
+    'map',
     'incident',
     'drf_yasg',
     'rest_framework',
@@ -80,6 +81,7 @@ REST_FRAMEWORK = {  # drf 설정
     ],
     "DEFAULT_RENDERER_CLASSES": [
         "rest_framework.renderers.JSONRenderer",
+        'rest_framework.renderers.BrowsableAPIRenderer',
     ],
     "DEFAULT_PARSER_CLASSES": [
         "rest_framework.parsers.JSONParser",
@@ -132,7 +134,7 @@ SWAGGER_SETTINGS = {
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
