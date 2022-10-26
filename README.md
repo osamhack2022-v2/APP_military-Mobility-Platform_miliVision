@@ -5,7 +5,16 @@
 </div>
 <center><h3>군 모빌리티 플랫폼 : Military Mobility Platform</h3></center>
 
-><center><h3>언제 어디서나 실시간으로 군 이동수단을 공유하는 플랫폼</h3></center>
+<center><h3>언제 어디서나 실시간으로 군 이동수단을 공유하는 플랫폼</h3></center>
+
+</p>
+<p align="center">
+	<a href="https://github.com/osamhack2022/APP_military-Mobility-Platform_miliVision/search?l=Python&type=code"><img alt="GitHub language count" src="https://img.shields.io/github/languages/count/osamhack2022/APP_military-Mobility-Platform_miliVision"></a>
+	<a href="https://github.com/osamhack2022/APP_military-Mobility-Platform_miliVision/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/osamhack2022/APP_military-Mobility-Platform_miliVision"></a>
+	<a href="https://github.com/osamhack2022/APP_military-Mobility-Platform_miliVision/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/osamhack2022/APP_military-Mobility-Platform_miliVision"></a>
+	<a href="https://github.com/osamhack2022/APP_military-Mobility-Platform_miliVision/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/osamhack2022/APP_military-Mobility-Platform_miliVision"></a>
+	<a href="https://github.com/osamhack2022/APP_military-Mobility-Platform_miliVision/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/osamhack2022/APP_military-Mobility-Platform_miliVision"></a>
+</p>
 
 # 목차
 1. [프로젝트 소개](#프로젝트-소개)
