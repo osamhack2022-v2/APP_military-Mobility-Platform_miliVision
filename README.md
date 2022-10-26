@@ -27,6 +27,28 @@
 8. [저작권 및 사용권 정보](#저작권-및-사용권-정보)
 
 ## 프로젝트 소개
+
+<h2 align="center">프로젝트 설명 영상 및 발표자료</h2>
+
+<table>
+	<tr>
+		<td>
+			<a href="https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2qVnJPBkTqsEBGGmw-ERHwm6VLj499oOF5rKSbOB6h0kazxMD/pub?start=false&loop=false&delayms=3000"><img src="images/demonstration_video.gif" alt="시연 영상"></a>
+		</td>
+		<td>
+			<a href="https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2qVnJPBkTqsEBGGmw-ERHwm6VLj499oOF5rKSbOB6h0kazxMD/pub?start=false&loop=false&delayms=3000"><img src="images/ppt.gif" alt="발표 자료"></a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<b>시연 영상</b>
+		</td>
+		<td align="center">
+			<b>발표 자료</b>
+		</td>
+	</tr>
+</table>
+
 ### 개요
  - **Military-Mobility-Platform**은 군 이동수단(차량)에 대한 배차 신청, 구난차량 요청 등 다양한 정보를 스마트폰 app을 통해 실시간으로 공유하고 관리할 수 있는 플랫폼을 구현하기 위한 프로젝트입니다. 군 이동수단의 특성 상 실시간으로 정보를 주고받아 신속하게 대응하는 것이 필요합니다.
 
