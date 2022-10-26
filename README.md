@@ -31,7 +31,7 @@
 <table>
 	<tr>
 		<td>
-			<a href="https://www.youtube.com/watch?v=suvEYpgqv18"><img src="/image/INTRO_THUMBNAIL.png"></a>
+			<a href="https://www.youtube.com/watch?v=suvEYpgqv18"><img src="/image/ppt.gif"></a>
 		</td>
 	</tr>
 	<tr>
