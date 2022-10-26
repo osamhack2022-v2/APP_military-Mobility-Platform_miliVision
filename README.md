@@ -27,6 +27,23 @@
 8. [저작권 및 사용권 정보](#저작권-및-사용권-정보)
 
 ## 프로젝트 소개
+
+<table>
+	<tr>
+		<td>
+			<a href="https://www.youtube.com/watch?v=suvEYpgqv18"><img src="/image/INTRO_THUMBNAIL.png"></a>
+		</td>
+	</tr>
+	<tr>
+		<td align="center">
+			<b>소개 영상</b>
+		</td>
+	</tr>
+</table>
+
+<h4 align="center">이미지 클릭 시 youtube 영상으로 이동합니다.</h4><br><br><br>
+<br>
+
 ### 개요
 군 이동수단에 대한 배차 신청, 구난차량 요청 등 다양한 정보를 스마트폰 app을 통해 실시간으로 공유하고 관리할 수 있는 플랫폼을 구현하기 위한 프로젝트입니다. 군 이동수단의 특성 상 실시간으로 정보를 주고받아 신속하게 대응하는 것이 필요합니다.
 
