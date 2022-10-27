@@ -401,6 +401,8 @@
 | ---------- | -------------------------------------------------------------------------------------------------------------- | ------------------------ |
 | Python     | ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)         | https://www.python.org/  |
 | DjangoREST | ![DjangoREST](https://img.shields.io/badge/DJANGO-REST-ff1709?style=for-the-badge&logo=django&logoColor=white&color=ff1709&labelColor=gray) | https://www.django-rest-framework.org/ |
+| Docker     | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=Docker&logoColor=white)            | https://www.docker.com/  |
+
  
 ### 💾 Databases
 
@@ -411,10 +413,18 @@
 [(Back to top)](#목차)
 
 ## 설치 안내
+
+#### flutter로 App 시작하기
 ```bash
 $ git clone https://github.com/osamhack2022-v2/APP_military-Mobility-Platform_miliVision
 $ cd ./APP\(FE\)/military_mobility_platform_frontend/
 $ flutter run -d web-server --web-hostname=0.0.0.0
+```
+
+#### Backend 서버 시작하기
+```bash
+$ cd APP\(BE\)/web-server/backend/
+$ sudo docker-compose up -d
 ```
 
 [(Back to top)](#목차)
