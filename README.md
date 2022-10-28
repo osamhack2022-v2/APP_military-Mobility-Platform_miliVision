@@ -338,8 +338,8 @@
  - docker commpose를 통해 언제 어디서나 오류 없이 서비스 시작 가능
  - 관리자 Page를 활용해 수송 담당자도 바로 업무에 활용 가능
 
-### 📡공개 SW개발
- - git을 적극 활용해 개발 완료
+### 📡공개 SW개발 방식
+ - git의 issue, kanban board를 활용해 작업
  - front, back, design으로 분업화하여 협업
  - slack을 통해 의사소통 Up
 
