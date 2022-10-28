@@ -357,7 +357,7 @@
 
 #### Frontend 구조
 <div align="center">
-    <img src="images/front_structure.png" alt="프론트 구조>
+    <img src="images/front_structure.png" alt="프론트 구조">
 </div>
 
 #### Backend 구조
