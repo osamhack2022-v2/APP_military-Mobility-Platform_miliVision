@@ -355,8 +355,14 @@
 
 ### 1. 체계 구성도
 
+#### Frontend 구조
 <div align="center">
-    <img src="images/backend_structure.png" alt="시스템 아키텍쳐">
+    <img src="images/front_structure.png" alt="프론트 구조>
+</div>
+
+#### Backend 구조
+<div align="center">
+    <img src="images/backend_structure.png" alt="백엔드 구조">
 </div>
 
 ### 2. 필수 조건 안내
