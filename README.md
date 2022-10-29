@@ -65,9 +65,10 @@
 	- 각 부대 행정실의 국방망에 접속해 조회할 수 있어 행정실 밖에서 운행 기록과 마일리지 확인이 필요한 경우 이를 조회할 수 없어 불편함
 
 
+### Miliatry Mobility Platform의 핵심 기능
+
 위와 같은 문제점들을 해결하기 위해 수송업무 담당자(간부,군무원) 및 이동수단(차량) 탑승자, 운행자(직접운전 간부, 운전병)들이 모여 소통하고 군의 이동수단을 효율적으로 이용할 수 있도록 돕는 군 모빌리티 플랫폼을 고안했습니다.
 
-### Miliatry Mobility Platform의 핵심 기능
 <br>
 <div align="center">
     <img src="images/Service.png" alt="군 모빌리티 플랫폼 서비스" width="900" height="500">
