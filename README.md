@@ -32,17 +32,17 @@
 
 <p align="center">
 	<a href="">
-		<img src="/image/DEMO_BUTTON (1).png" />
+		<img src="/images/DEMO_BUTTON (1).png" />
 	</a>
 	<a href="https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2qVnJPBkTqsEBGGmw-ERHwm6VLj499oOF5rKSbOB6h0kazxMD/pub?start=false&loop=false&delayms=3000">
-		<img src="/image/DOCUMNET_BUTTON.png" />
+		<img src="/images/DOCUMNET_BUTTON.png" />
 	</a>
 	<a href="https://github.com/osamhack2022/APP_military-Mobility-Platform_miliVision/issues">
-		<img src="/image/ISSUE_BUTTON.png" />
+		<img src="/images/ISSUE_BUTTON.png" />
 	</a>
 </p>
 
-### **Military Mobility Platform**은 군 이동수단(차량)에 대한 배차 신청, 구난차량 요청 등 다양한 정보를 스마트폰 app을 통해 실시간으로 공유하고 관리할 수 있는 플랫폼을 구현하기 위한 프로젝트입니다.
+**Military Mobility Platform**은 군 이동수단(차량)에 대한 배차 신청, 구난차량 요청 등 다양한 정보를 스마트폰 app을 통해 실시간으로 공유하고 관리할 수 있는 플랫폼을 구현하기 위한 프로젝트입니다.
 
 ### 프로젝트 선정 이유
 #### 1. 실시간으로 정보를 주고 받아 신속하게 대응할 수 있는 플랫폼의 부재
@@ -72,7 +72,7 @@
 ### Miliatry Mobility Platform의 핵심 기능
 <br>
 <div align="center">
-    <img src="/image/service.png" alt="군 모빌리티 플랫폼 서비스" width="900" height="500">
+    <img src="images/service.png" alt="군 모빌리티 플랫폼 서비스" width="900" height="500">
 </div>
 
 [(Back to top)](#목차)
