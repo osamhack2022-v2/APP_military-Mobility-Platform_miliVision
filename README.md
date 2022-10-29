@@ -1,7 +1,7 @@
 # Military Mobility Platform (군 모빌리티 플랫폼)
 <br>
 <div align="center">
-    <img src="logo.gif" alt="군 모빌리티 플랫폼 로고" width="300" height="300">
+    <img src="logo.gif" alt="군 모빌리티 플랫폼 로고" width="800" height="400">
 </div>
 <center><h3>군 모빌리티 플랫폼 : Military Mobility Platform</h3></center>
 
