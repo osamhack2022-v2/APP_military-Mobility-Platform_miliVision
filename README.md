@@ -72,7 +72,7 @@
 ### Miliatry Mobility Platform의 핵심 기능
 <br>
 <div align="center">
-    <img src="images/service.png" alt="군 모빌리티 플랫폼 서비스" width="900" height="500">
+    <img src="images/Service.png" alt="군 모빌리티 플랫폼 서비스" width="900" height="500">
 </div>
 
 [(Back to top)](#목차)
