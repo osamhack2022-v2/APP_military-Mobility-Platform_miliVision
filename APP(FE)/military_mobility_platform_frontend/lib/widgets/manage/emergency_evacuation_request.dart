@@ -60,7 +60,7 @@ class _EmergencyEvacuationRequestSetState
           children: [
             const Padding(padding: EdgeInsets.only(bottom: 100.0)),
             Image.asset(
-              'assets/images/MEDCOM.jpg',
+              'assets/images/MEDCOM.png',
               width: 100.0,
               height: 120.0,
               fit: BoxFit.cover,
