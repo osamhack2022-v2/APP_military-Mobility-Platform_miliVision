@@ -14,6 +14,16 @@
 	<a href="https://github.com/osamhack2022/APP_military-Mobility-Platform_miliVision/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/osamhack2022/APP_military-Mobility-Platform_miliVision"></a>
 	<a href="https://github.com/osamhack2022/APP_military-Mobility-Platform_miliVision/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/osamhack2022/APP_military-Mobility-Platform_miliVision"></a>
 	<a href="https://github.com/osamhack2022/APP_military-Mobility-Platform_miliVision/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/osamhack2022/APP_military-Mobility-Platform_miliVision"></a>
+
+	<a href="">
+		<img src="/images/DEMO_BUTTON (1).png" />
+	</a>
+	<a href="https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2qVnJPBkTqsEBGGmw-ERHwm6VLj499oOF5rKSbOB6h0kazxMD/pub?start=false&loop=false&delayms=3000">
+		<img src="/images/DOCUMNET_BUTTON.png" />
+	</a>
+	<a href="https://github.com/osamhack2022/APP_military-Mobility-Platform_miliVision/issues">
+		<img src="/images/ISSUE_BUTTON.png" />
+	</a>
 </p>
 
 ## 목차
@@ -29,18 +39,6 @@
 10. [저작권 및 사용권 정보](#저작권-및-사용권-정보)
 
 ## 프로젝트 소개
-
-<p align="center">
-	<a href="">
-		<img src="/images/DEMO_BUTTON (1).png" />
-	</a>
-	<a href="https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2qVnJPBkTqsEBGGmw-ERHwm6VLj499oOF5rKSbOB6h0kazxMD/pub?start=false&loop=false&delayms=3000">
-		<img src="/images/DOCUMNET_BUTTON.png" />
-	</a>
-	<a href="https://github.com/osamhack2022/APP_military-Mobility-Platform_miliVision/issues">
-		<img src="/images/ISSUE_BUTTON.png" />
-	</a>
-</p>
 
 **Military Mobility Platform**은 군 이동수단(차량)에 대한 배차 신청, 구난차량 요청 등 다양한 정보를 스마트폰 app을 통해 실시간으로 공유하고 관리할 수 있는 플랫폼을 구현하기 위한 프로젝트입니다.
 
