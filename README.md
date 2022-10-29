@@ -15,7 +15,7 @@
 	<a href="https://github.com/osamhack2022/APP_military-Mobility-Platform_miliVision/network"><img alt="GitHub forks" src="https://img.shields.io/github/forks/osamhack2022/APP_military-Mobility-Platform_miliVision"></a>
 	<a href="https://github.com/osamhack2022/APP_military-Mobility-Platform_miliVision/blob/master/LICENSE"><img alt="GitHub license" src="https://img.shields.io/github/license/osamhack2022/APP_military-Mobility-Platform_miliVision"></a>
 <p align="center">
-	<a href="https://github.com/osamhack2022-v2/APP_military-Mobility-Platform_miliVision/blob/c4261ae7e59d91f984757658b237dbece1c4a05c/demonstration_video(221029).mp4">
+	<a href="">
 		<img src="/images/DEMO_BUTTON (1).png" />
 	</a>
 	<a href="https://docs.google.com/presentation/d/e/2PACX-1vQ43KBXZZqnEAMP_ddxZRnNsgHBSEi2qVnJPBkTqsEBGGmw-ERHwm6VLj499oOF5rKSbOB6h0kazxMD/pub?start=false&loop=false&delayms=3000">
@@ -91,14 +91,9 @@
 		  <img src="images/example-5.gif" alt="로그인" width="195" height="422" />
 	  </td>
 	  <td>
-		  개요: 아이디와 비밀번호를 입력하고 허가된 사용자만 app에 접속할 수 있습니다. <br><br>
-		  엑터명: 탑승자, 수송업무 담당자, 운전자<br><br>
-		  사전 조건: 회원 가입이 되어있어야 함.<br><br>
-		  기능 흐름:<br>
-		  <br> - 사용자는 아이디를 입력합니다.<br>
-		  <br> - 사용자는 비밀번호를 입력합니다.<br>
-		  <br> - 로그인 버튼을 클릭하면 서버에서 사용자 인증을 진행합니다.<br>
-		  <br> - 인증이 성공하면 메인 화면 페이지로 이동합니다.
+		  ➡ 아이디와 비밀번호를 입력하고 사전에 회원가입을 통해 허가된 사용자만 app에 접속할 수 있습니다. <br><br>
+		  
+		  ➡ 엑터명: 탑승자, 수송업무 담당자, 운전자<br><br>
 	  </td>
 </table>
 
