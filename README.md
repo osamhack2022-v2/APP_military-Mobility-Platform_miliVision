@@ -1,4 +1,7 @@
 # Military Mobility Platform (군 모빌리티 플랫폼)
+<div align='center'>
+	<b>🏆 <u>정보통신산업진흥원장상(NIPA원장상) 수상작</u> 🏆</b>
+</div>
 <br>
 <div align="center">
     <img src="logo.gif" alt="군 모빌리티 플랫폼 로고" width="800" height="400">
