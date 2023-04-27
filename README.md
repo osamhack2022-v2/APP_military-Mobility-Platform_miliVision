@@ -450,12 +450,8 @@ $ sudo docker-compose up -d
 <tr>
 <td width="100" align="center">박유진</td>
 <td width="250" align="center">팀장(PM), UI/UX 디자인</td>
-<td width="150" align="center">	
-	<a href="https://github.com/LatteHorse" target="_blank"><img src="https://img.shields.io/badge/LatteHorse-655ced?style=social&logo=github"/></a>
-</td>
-<td width="300" align="center">
-	<a href="mailto:eugene5802@gmail.com">eugene5802@gmail.com</a>
-</td>
+<td width="150" align="center"> - </td>
+<td width="300" align="center"> - </td>
 </tr>
 	
 <tr>
